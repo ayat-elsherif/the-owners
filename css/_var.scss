@@ -1,0 +1,13 @@
+$mainColor:#0161ab;
+$mainColorOpacity:#0095ebee;
+$mainColorHover:#0082cb;
+$bgWhite:rgba(255,255,255,.95);
+
+
+@mixin transition($args...) {
+    -webkit-transition: $args;
+    -moz-transition: $args;
+    -ms-transition: $args;
+    -o-transition: $args;
+    transition: $args;
+  }

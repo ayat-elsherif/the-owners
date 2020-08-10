@@ -1,0 +1,29 @@
+/**********************offcanvas********************/
+
+.screen-overlay {
+  right: 0;
+}
+
+.mobile-offcanvas{
+    @media screen and (max-width:992px) {
+    transform:translateX(100%);
+    right:0;
+    }
+  }	
+@media all and (max-width:992px) { 
+  .mobile-offcanvas.showCanvas{
+    transform: translateX(0%);
+  }
+}
+
+
+.rtl, [dir=rtl] {
+  .form-check-input, .form-check-input {
+    margin-right: .25rem;
+    margin-left: .3125rem;
+  }
+  .form-check-label, .form-check-label {
+    padding-right: inherit;
+    padding-left: 1.25rem;
+  }
+}
