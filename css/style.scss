@@ -267,6 +267,9 @@ a.btn{
                 padding:0 20px;
                 position: relative;
                 letter-spacing: .3px;
+                @media screen and(max-width:991px) {
+                    padding:0 10px;   
+                }
                 i{
                     padding:0 5px;
                     vertical-align: middle;
