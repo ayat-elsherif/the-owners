@@ -27,3 +27,36 @@
     padding-left: 1.25rem;
   }
 }
+
+
+.bannerCont{
+  .mainSearchHome{
+      right:15%;
+      left:Auto;
+      @media screen and (max-width:767px) {
+        right:5%;
+        left: auto;
+    }
+  }
+  .mainSearch{
+    .form-group{
+      .form-control{
+        padding:0 2.2rem 0 .5rem;
+      }
+      &:first-child{
+        .form-control{
+            border-right: 0;
+            border-radius:0 40px 40px 0;
+            &.round-right{
+              border-bottom-right-radius: 0;
+            }
+        }
+      }
+      &:last-child{
+        .form-control{
+            border-radius:40px 0 0 40px ;
+        }
+      }
+    }
+  }
+}

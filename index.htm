@@ -14,10 +14,65 @@
       <link rel="stylesheet" href="css/multiForm.css">
       <link rel="stylesheet" href="css/style-rtl.css">
     </head>
-    <body dir='rtl' style="position: relative;">
+    <body dir='rtl' >
+
+      <div class="scroll-up">
+        <i class="fa fa-chevron-up fa-2x"></i>  
+      </div>
+
+      <!------------navbar modals---------->
+      <div class="modal fade" id="signIn" tabindex="-1" role="dialog" aria-labelledby="signInLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5 class="text-center"><a href="#" data-toggle="modal" data-target="#signUp" data-dismiss="modal">هل انت مستخدم جديد؟ سجل معنا</a></h5>
+              <div class="mt-3">
+                <form class="form" action ="#">
+                  <div class="form-group">
+                    <label>البريد الإلكتروني</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                    <label>كلمة السر</label>
+                    <input type="text" class="form-control">
+                  </div>
+                  <div class="form-group">
+                      <label><input type="checkbox"> تذكرني</label>
+                  </div>
+                  <a href="#">نسيت كلمة المرور؟</a>
+                  <div class="text-center">
+                    <button class="btn btn-primary">دخول</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="modal fade" id="signUp" tabindex="-1" role="dialog" aria-labelledby="signUpLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-body">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+              <h5><a href="#" data-toggle="modal" data-target="#signIn" class="close" data-dismiss="modal">هل انت مسجل معنا من قبل؟ ادخل حسابك</a></h5>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!------------end navbar modals---------->
 
         <!-----navbar---->
-    <div class="container-fluid top_nav pAbs">
+    <header class="container-fluid top_nav pAbs">
       <div class="container large">
         <b class="screen-overlay"></b>
       <div class="row mx-0 justify-content-between align-items-center">
@@ -25,8 +80,11 @@
           <button data-trigger="#navbar_main" class="d-lg-none" type="button"> 
             <i class="fas fa-align-right fa-2x"></i> 
           </button>
+
+          <!-------small screens block1--------->
             <a class="navbar-brand d-block d-xl-none d-lg-none col-md-4 col-6 mr-auto" href="#"><img src="images/logo.png" class="img-fluid"></a>
           <button class="d-lg-none d-md-block announceProperty">أعلن عن عقارك</button>
+          <!----------end small screens block1------------->
       </div>
       <nav class="navbar navbar-expand-lg navbar-light mobile-offcanvas" id='navbar_main'>  
           <a class="navbar-brand d-none d-lg-block" href="#"><img src="images/logo.png"></a>
@@ -47,7 +105,7 @@
               <li class="nav-item">
                   <a class="nav-link" href="#"> <i class="las la-balance-scale d-lg-none d-md-inline-block"></i> استشارة قانونية</a>
               </li>
-              <!----------small screens block1 --------->
+              <!----------small screens block2 --------->
               <li class="nav-item d-lg-none d-md-inline-block">
                 <a class="nav-link" href="#"> <i class="las la-plus-circle"></i> إعلن عن عقارك</a>
               </li>
@@ -63,30 +121,30 @@
               <li class="nav-item d-lg-none d-md-inline-block">
                 <a class="nav-link" href="#"> <i class="las la-tasks"></i> الأحكام والشروط</a>
               </li>
-              <!----------end small screens block1 --------->
+              <!----------end small screens block2--------->
               <li class="nav-item">
                   <a class="nav-link" href="#"><i class="las la-comment-dots d-lg-none d-md-inline-block"></i> اتصل بنا</a>
               </li>
             </ul> 
           <!----------large screens--------->
-            <ul class="navbar-nav ml-lg-auto">
+            <ul class="navbar-nav ml-lg-auto align-items-center">
               <li class="nav-item d-none d-lg-block">
-                <a class="nav-link" href="#">دخول</a>
+                <a class="nav-link" data-toggle="modal" data-target="#signIn">دخول</a>
               </li>
               <li class="nav-item d-none d-lg-block">
-                <a class="nav-link" href="#">انشاء حساب</a>
+                <a class="nav-link" data-toggle="modal" data-target="#signUp">انشاء حساب</a>
               </li>
               <li class="nav-item d-none d-lg-block">
                 <a class="nav-link" href="#">English</a>
               </li>
-              <button class=" nav-link  announceProperty d-none d-lg-inline-block">أعلن عن عقارك</button>
+              <button class="nav-link announceProperty d-none d-lg-inline-block" data-toggle="modal" data-target="#exampleModal">أعلن عن عقارك</button>
             </ul>
             <!----------end large screens--------->
           </div>
         </nav>
       </div>
-    </div>
-    <!----------small screens block2 --------->
+    </header>
+    <!----------small screens block3 --------->
     <div class="sec_nav d-lg-none d-md-block">
       <ul class="list-inline text-right px-2">
         <li class="nav-item list-inline-item">
@@ -100,14 +158,45 @@
         </li>
       </ul>
     </div>
-    <!----------End small screens block2 --------->
+    <!----------End small screens block3 --------->
 
-    <div class="scroll-up">
-      <i class="fa fa-chevron-up fa-2x"></i>  
-    </div>
-
+    
     <div class="bannerCont">
       <img src='images/BG_TheOwners.jpg' class="img-fluid">
+     <div class="mainSearchHome">
+      <section class="headingGroups">
+        <h1>بتدور على عقار ؟؟</h1>
+        <h3>اشتري من المالك مباشرة وبدون وسطاء أو سماسرة</h3>
+        <p>
+          اعلاناتنا كلها من المالك مباشرة وتمت مراجعة مستندات الملكية لكل عقار
+          بواسطة محاميون مكتبنا ووصف الوضع القانوني لكل عقار 
+        </p>
+    </section>
+     </div>
+     <section class='mainSearch'>
+          <form class="form">
+              <div class="row">    
+                <div class="form-group px-0 col-lg-2">
+                  <select class="form-control">
+                      <option>نوع العقار</option>
+                      <option>منزل</option>
+                      <option>شقة</option>
+                  </select>
+                </div>
+                <div class="form-group px-0 col-lg-2">
+                  <select class="form-control">
+                      <option> للبيع </option>
+                  </select>
+                </div>       
+                <div class="form-group px-0 col-lg-6">
+                  <input class="form-control" placeholder="المدينة أو الحي">
+                </div>
+                <div class="form-group px-0 col-lg-2">
+                  <input type="button" value="بحث" class="form-control btn btn-primary">
+                </div>
+              </div>
+          </form>
+      </section>
     </div>
 
 

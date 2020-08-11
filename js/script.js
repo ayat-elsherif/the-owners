@@ -40,7 +40,22 @@ $(function(){
         title:"Mon-Fri <br> 8:00AM-6:00PM <br>(GMT +2)",
         html:true
     });
-    new WOW().init();
+	new WOW().init();
+	
+
+
+/********************************************** */
+	$('.form-control:first').focus(function(){
+		$(this).addClass('round-right');	
+	});
+	$('.form-control:first-child').on(' blur',function(){
+		$(this).removeClass('round-right');	
+	});
+	$('.form-control option').on('click focus',function(){
+		$(this).removeClass('round-right');	
+	});
+
+
 /******************************Add a property MultiForm***************************** */
     
 //jQuery time

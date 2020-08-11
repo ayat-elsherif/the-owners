@@ -44,6 +44,7 @@ p{
 }
 i, button, a, .btn,img {
     transition:.35s all ease-in !important;
+    color:$mainColor;
 }
 a:hover{
     text-decoration: none !important;
@@ -55,7 +56,7 @@ input:focus,select:focus{
 input[type=file]{
     text-indent: 0px !important;
 }
-button{
+button, .btn-primary{
     background-color: $mainColor;
     border:transparent !important;
     color:#fff !important;
@@ -94,10 +95,10 @@ a.btn{
     padding: .15rem 2.5rem;
     font-size: 1.5rem;
     font-weight: bold;
-    background-color:#0161ab;
+    background-color:$mainColorDark;
     &:hover{
         color:#f5f5f5;
-        background-color:#05528d ;
+        background-color:$mainColorDark ;
     }
     
 } 
@@ -159,6 +160,36 @@ a.btn{
     line-height: .5rem !important;
     font-size: .8rem;
 }
+
+/*********************navbar modals**********************/
+#signIn,#signUp{
+    .modal-dialog{
+        border-radius:0;
+        .modal-content{
+            max-width:100%;
+            .modal-body{
+                margin: 3rem 3rem 1.5rem;
+                h5{
+                    margin-bottom: 2.5rem;
+                    @media screen and (max-width:575px) {
+                        font-size: 1rem;
+                    }
+                }
+               form{
+                   .form-group{
+                       margin-bottom: 1rem;
+                   }
+                button{
+                    padding:.5rem 3rem;
+                    border-radius: 40px;
+                    margin-top: 2rem;
+                }
+               }
+            }
+        }
+    }
+}
+/*********************end navbar modals**********************/
 
 .scroll-up {
     position: fixed;
@@ -252,6 +283,7 @@ a.btn{
                 letter-spacing: .3px;
                 @media screen and(max-width:1199px) {
                     padding:0 10px;   
+                    font-size: .95rem;
                 }
                 i{
                     padding:0 5px;
@@ -347,6 +379,94 @@ a.btn{
                 font-size: .8rem;
             }
            }
+        }
+    }
+}
+
+.bannerCont{
+    position: relative;
+    .mainSearchHome{
+        position: absolute;
+        top:15%;
+        left:15%;
+        width:64%;
+        color:#fff;
+        font-size: 16px;
+        @media screen and (max-width:1199px) {
+            font-size: 13px;
+        }
+        @media screen and (max-width:991px) {
+            font-size: 12px;
+            top:10%;
+            width:74%
+        }
+        @media screen and (max-width:767px) {
+            font-size: 1.8vw;
+            top: 3vh;
+            left:5%;
+            width:90%;
+        }
+        h1,h3{
+            line-height:1.3em;
+        }
+        h1{
+            font-size: 3.5em;
+        }
+        h3{
+            font-size: 2em;
+        }
+        p{
+            font-size: 1.8em;
+        }
+    }
+    .mainSearch{
+        position: absolute;
+        top:68%;
+        width:68%;
+        right:16%;
+        .form-group{
+            .form-control {
+                height: 80px;
+                border-radius: 0px;
+                border: 0px;
+                border-right: 2px solid #ccc;
+                font-size: 1.2rem;
+                padding:0 .5rem 0 2rem;
+                @media screen and (max-width:575px) {
+                    height: 65px;
+                }
+            }
+            select.form-control{
+                color:#6c757e;
+            }
+            input[type=button].form-control{
+                background-color: $mainColor;
+                color:#fff;
+                &:hover{
+                    background-color: $mainColorHover;
+                }
+            }
+            &:first-child{
+                .form-control{
+                    border-left: 0;
+                    border-radius:40px 0 0 40px;      
+                }
+            }
+            &:last-child{
+                .form-control{
+                    border-radius: 0 40px 40px 0;
+                }
+            }
+        }
+        @media screen and (max-width:991px) {
+            position:relative;
+            margin-top: 50px;
+            .form-group{
+                .form-control{
+                    border-radius:40px !important;
+                    border: 2px solid #ccc !important;
+                }
+            }
         }
     }
 }
