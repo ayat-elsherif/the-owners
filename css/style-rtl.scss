@@ -5,12 +5,12 @@
 }
 
 .mobile-offcanvas{
-    @media screen and (max-width:992px) {
+    @media screen and (max-width:991px) {
     transform:translateX(100%);
     right:0;
     }
   }	
-@media all and (max-width:992px) { 
+@media all and (max-width:991px) { 
   .mobile-offcanvas.showCanvas{
     transform: translateX(0%);
   }

@@ -68,6 +68,9 @@ button{
             font-size: .9rem;
             height: unset;
         }
+        @media screen and (max-width:575px) {
+            font-size: .8rem;
+        }
     }
     &:hover{
         background-color: $mainColorHover !important;
@@ -116,36 +119,16 @@ a.btn{
 .container.large {
     max-width: 1400px;
 }
-.bgTrans{
-    .navbar{
-        height:65px !important;
-        .navbar-brand{
-            margin-right:0 !important;
-            img{
-                width:11rem !important;
-            }
-        }
-        li.nav-item {
-            a{
-                padding: 0px 20px !important;
-            }
-        }
-    }
-}
-.bgTrans.sticky{
-    .navbar {
-        li.nav-item {
-            a{
-                padding-top: 0px !important; 
-            }
-        }
-    }
-}
+
 
 .navbar-brand{
     margin-right:0 !important;
     max-width: 220px;
     width: 100%;
+    img{
+        width: 9rem;
+        vertical-align: bottom;
+    }
 }
 
 .bgHover{
@@ -245,13 +228,13 @@ a.btn{
             margin-right:0 !important;
             img{
 
-                width:11rem;
+                width:10rem;
                 @media screen and(max-width:991px){
-                    width:11rem;
+                    width:9rem;
                     margin:1rem 1rem 2rem;
                 }
                 @media screen and(max-width:425px){
-                    width:10rem !important;
+                    width:9rem !important;
                 }
 
             }
@@ -359,6 +342,10 @@ a.btn{
         li{
            a{
             color:#fff;
+            padding: .5rem 2vw;
+            @media screen and (max-width:575px) {
+                font-size: .8rem;
+            }
            }
         }
     }
