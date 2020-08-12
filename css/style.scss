@@ -314,6 +314,9 @@ a.btn {
                 }
             }
             .uCanButtons{
+                @media screen and (max-width:991px) {
+                    padding:0 !important;
+                }
                 button{
                     width: 250px;
                     padding: .2rem 20px .5rem !important;
@@ -384,7 +387,7 @@ a.btn {
 
     button[data-trigger="#navbar_main"],
     .offcanvas-header button {
-
+        padding:0 !important;
         &,
         &:hover,
         &:focus {
@@ -951,6 +954,9 @@ body.offcanvas-active {
     margin: 50px auto;
     background-color: #fff;
     border: 1px solid #ddd;
+    @media screen and (max-width:767px ) {
+        width:90%;
+    }
     .main-title{
         color:$mainColorDark;
         font-size: 1.3rem;
