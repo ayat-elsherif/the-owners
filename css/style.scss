@@ -473,6 +473,33 @@ a.btn{
 
 
 
+.recentlyCont{
+  .singleProp{
+      border:1px solid #ddd;
+      background-color: #fff;
+      figure{
+          margin:0;
+        figcaption{
+            padding:1rem 1rem 0;
+        }
+      }
+      .propBody{
+          padding:.5rem 1rem;
+      }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
 .footerCont{
     font-weight: 300;
     background-color:$secColor ;

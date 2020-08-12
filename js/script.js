@@ -45,13 +45,13 @@ $(function(){
 
 
 /********************************************** */
-	$('.form-control:first').focus(function(){
+	$('.form-control:first-child').focus(function(){
 		$(this).addClass('round-right');	
 	});
 	$('.form-control:first-child').on(' blur',function(){
 		$(this).removeClass('round-right');	
 	});
-	$('.form-control option').on('click focus',function(){
+	$('.form-control:first-child::selected').on(' blur',function(){
 		$(this).removeClass('round-right');	
 	});
 
