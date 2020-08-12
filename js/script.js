@@ -51,8 +51,12 @@ $(function(){
 	$('.form-control:first-child').on(' blur',function(){
 		$(this).removeClass('round-right');	
 	});
-	$('.form-control:first-child::selected').on(' blur',function(){
-		$(this).removeClass('round-right');	
+	
+
+
+	$(".modalToggling [data-dismiss=modal]").click(function(){
+		// $('body').css('overflow','hidden');
+		$('.modal').css('overflow-y','auto');
 	});
 
 
