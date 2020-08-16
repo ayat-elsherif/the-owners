@@ -53,11 +53,69 @@ $(function(){
 	});
 	
 
+	/*****************switching between advertise ur property/ signUp/ signIn************ */
 
 	$(".modalToggling [data-dismiss=modal]").click(function(){
 		// $('body').css('overflow','hidden');
 		$('.modal').css('overflow-y','auto');
 	});
+	/*****************end switching between advertise ur property/ signUp/ signIn************ */
+
+	/***********************add another contact number ******************* */
+
+	// $('#addContactNo').click(function(e){
+	// 	e.preventDefault();
+	// 	e.stopPropagation();
+	// 	HvacStandards();
+
+	// });
+
+
+
+
+
+
+
+
+
+$('#addContactNo').click(function(){
+	toAddNo();
+});
+
+
+newNo = 1;
+currentNo = -1;
+
+function toAddNo() {
+	var rowNo = newNo;
+	if($("#enterContactNo").val()==''){
+		alert('من فضلك ادخل رقم الهاتف');
+	}
+	else if(isNaN($("#enterContactNo").val())){
+		alert('ادخل أرقام فقط ');
+	}
+    else if (currentNo>0) {
+		saveEdits();
+		
+    } else {
+        var contactNo = $("#enterContactNo").val();
+        var sHtml = `
+        <div class='mb-3' id='row${rowNo}'>
+			<p class='contactNo mb-0 animated fadeIn' id='phoneNo${rowNo}'><span>${contactNo}</span></p>
+			<div class='editingNo'>
+				<span class='editRow' onclick='editRow(${rowNo})' > <i class="las la-pen"></i> تعديل </span>&nbsp;
+				<span class='deleteRow' onclick='deleteRow(${rowNo})'> <i class="las la-times"></i> حذف</span>
+			</div>
+		</div>`;
+        $("#contactNoList").append(sHtml);
+        newNo++;
+		$("#enterContactNo").val("");
+		$('#contactLabel').html('أضف رقم آخر');
+
+    }
+}
+
+	/***********************end add another contact number ******************* */
 
 
 /******************************Add a property MultiForm***************************** */

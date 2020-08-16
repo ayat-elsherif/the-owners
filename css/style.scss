@@ -117,8 +117,38 @@ button,
 }
 
 
+button.close {
+    background: #87a6b8;
+    background: #b6b6b6;
+    color: #fff !important;
+    border-radius: 0;
+    padding: 10px !important;
+    line-height: 0;
+    width: 40px;
+    height: 40px;
+    margin: 0 !important;
+    font-size:1.4rem;
+    &:hover, &:focus {
+       outline: none;
+       box-shadow: none;
+       background: #b6b6b6 !important;
+    }
+}
+
+.btn-outline-primary{
+    color:$mainColor !important;
+    border: 1px solid $mainColor !important;
+    border-radius: 10px;
+    &:hover{
+        color:#fff !important;
+    }
+
+}
 .seeMore {
     color: $mainColor;
+}
+.text-muted{
+    color:#9ba1a5 !important;
 }
 
 a.btn {
@@ -127,7 +157,7 @@ a.btn {
     padding: .15rem 2.5rem;
     font-size: 1.5rem;
     font-weight: bold;
-    background-color: $mainColorDark;
+    background-color: $mainColor;
 
     &:hover {
         color: #f5f5f5;
@@ -197,10 +227,25 @@ a.btn {
     line-height: .5rem !important;
     font-size: .8rem;
 }
-
+textarea.form-control{
+    padding: 15px 10px !important;
+    font-size: 1rem;
+}
+.contactNo{
+    span{  
+        display: inline-block;
+        border: 2px solid $mainColor;
+        text-align: center;
+        padding:2px 0 5px;
+        border-radius: 15px;  
+        color:$mainColor;
+        width:40%
+    }
+}
 /*********************navbar modals**********************/
 #signIn,
-#signUp {
+#signUp,
+#legalConsult {
     .modal-dialog {
         border-radius: 0;
         max-width: 620px;
@@ -213,17 +258,7 @@ a.btn {
                 @media screen and (max-width:767px) {
                     margin:0;
                 }
-                button.close {
-                    color: #999 !important;
-                    margin-bottom: 1.5rem;
-                    padding: 0 !important;
-                    font-size: 2rem;
-
-                    &:hover {
-                        background: transparent !important;
-                        color: #777;
-                    }
-                }
+   
 
                 h5 {
                     margin-bottom: 2.5rem;
@@ -239,12 +274,12 @@ a.btn {
                     }
 
                     button {
-                        padding: .5rem 3rem;
+                        padding: .2rem 3rem .5rem !important;
                         border-radius: 40px;
                         margin-top: 2rem;
                     }
                 }
-                .ownersOnlyAnns, .signUpNow{
+                .ownersOnlyAnns, .signUpNow, .legalConsultRequest, .consultReqNow{
                     border: 1px solid #ddd;
                     padding: 10px;
                     margin-bottom: 5px;
@@ -253,7 +288,7 @@ a.btn {
                         font-size: 1.4rem;
                         color: $mainColor;
                     }
-                    .ownerAnnouncing{
+                    .ownerAnnouncing, .consultRequest{
                         margin-bottom: 20px;
                         line-height: 1.5rem;
                         p{
@@ -267,10 +302,15 @@ a.btn {
                             border-bottom:none;
                         }
                         }
-                        
+                       
+                    }
+                    .consultRequest{
+                        p{
+                            border:none !important;
+                        }
                     }
                 }
-                .signUpNow{
+                .signUpNow , .consultReqNow{
                     padding:30px;
                     p{
                         font-size: 1rem;
@@ -288,17 +328,7 @@ a.btn {
         max-width: 900px;
         .modal-body{
             margin:0 1.5rem 2rem;
-            button.close {
-                color: #999 !important;
-                margin-bottom: 1.5rem;
-                padding: 0 !important;
-                font-size: 2rem;
-
-                &:hover {
-                    background: transparent !important;
-                    color: #777;
-                }
-            }
+         
             p,h3{
                 margin-bottom: 5px;
                 font-size: 1.4rem;
@@ -460,22 +490,11 @@ a.btn {
                 position: relative;
                 letter-spacing: .3px;
 
-                @media screen and(max-width:1199px) {
-                    padding: 0 10px;
-                    font-size: .95rem;
-                }
-
                 i {
                     padding: 0 5px;
                     vertical-align: middle;
                     font-size: 1.2rem;
-                }
-
-                @media screen and(max-width:991px) {
-                    padding: 8px 35px 13px 0;
-                    border-bottom: 1px solid $mainColor;
-
-                }
+                } 
 
                 &:after {
                     content: "";
@@ -488,6 +507,21 @@ a.btn {
                     right: 35%;
                     // transform: translatex(-40%);
                     transition: all .35s ease-in-out;
+                }
+                @media screen and(max-width:1199px) {
+                    padding: 0 10px;
+                    font-size: .95rem;
+                }
+                @media screen and(max-width:991px) {
+                    padding: 8px 35px 13px 0;
+                    border-bottom: 1px solid $mainColor;
+                    &:hover{
+                        background-color: $mainColor;
+                        &:After{
+                            display: none; 
+                         }
+                    }
+
                 }
             }
 
@@ -643,7 +677,8 @@ a.btn {
                 padding: 0 .5rem 0 2rem;
 
                 @media screen and (max-width:575px) {
-                    height: 65px;
+                    height: 60px;
+                    font-size: 1rem;
                 }
             }
 
@@ -946,29 +981,176 @@ body.offcanvas-active {
 
 
 
-/***********************edit owner data page**********************/
+/***********************edit owner/add rent/add price/ owner ads pages**********************/
 
-.editOwnerCont{
-    width: 40%;
+.editOwnerCont,.addRentProp, .addPriceProp, .adsOwnerCont{
+    width: 45%;
     padding:2rem 3rem;
     margin: 50px auto;
     background-color: #fff;
     border: 1px solid #ddd;
     @media screen and (max-width:767px ) {
         width:90%;
+        padding:1rem 1.5rem;
     }
     .main-title{
-        color:$mainColorDark;
+        color:$mainColor;
         font-size: 1.3rem;
         margin-bottom: 1.5rem;
+    }
+    .form-control{
+        font-size: 1.1rem;
+       
+    }
+    textarea.form-control{
+        padding:15px 10px !important;
     }
 }
 
 /********************* end edit owner data page*******************/
 
 
+/**********************************property for rent Form*****************************/
+.addRentProp, .addPriceProp{
+    .addingContactNoCont{
+        .editingNo{
+            margin-right: 10px;
+            font-size: .9rem;
+            margin-top: 2px;
+            span{
+                cursor: pointer;
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+            span:first-child{
+                color:$mainColor
+            }
+            i{
+                color:$mainColor
+            }
+        }
+        #addContactNo{
+            padding: 0 1.5rem .25rem;
+            font-size: 1em;
+        }
+    }
+}
+/**********************************end property for rent Form*****************************/
 
 
+
+/**********************************Owners Ads*****************************/
+.adsOwnerCont{
+    .main-title{
+        margin: 0.5rem 0 2.5rem;
+    }
+    .single-ad{
+        padding-top: .5rem;
+        margin-top: 1.5rem;
+        border-top: 1px solid rgba(0,0,0,.1);
+        small{
+            font-size: .75rem;
+        }
+        h6{
+            color:$mainColor;
+            font-size: 1.1rem;
+        }
+        p{
+            font-size: .8rem;
+        }
+        button{
+            padding:0 .75rem 3px !important;
+            font-size: .9rem;
+            i{
+                vertical-align: middle;
+            }
+        }
+    }
+}
+/******************************end Owners Ads***************************/
+
+/******************************conditions*********************************/
+.conditionsCon, .advicesCont{
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding:2.5rem 3.5rem;
+    width:78%;
+    margin: 50px auto;
+    .main-title{
+        color:$mainColor;
+        font-size: 1.3rem;
+        margin-bottom: 2.5rem;
+    }
+    p{
+        line-height: 1.8rem;
+        font-size: 1rem;
+        strong{
+            font-weight: 600;
+        }
+    }
+    span{
+        color:$mainColor;
+    }
+    ul,ol{
+        margin-bottom: 2.5rem;
+        li{
+            margin-bottom:1.3rem;
+            line-height: 1.6rem;
+        }
+    }
+    ol{
+        list-style-position: inside;
+        padding-right: 0;
+    }
+}
+
+/*****************************thank u modal boxes*************************/
+.thankUCont{
+    margin-top:5%;
+ 
+}
+#revisingData, #checkingNo{
+   .modal-dialog{
+       max-width:35%;
+        .modal-body{
+            padding:1.5rem 3.5rem 2.5rem;
+            p{
+                font-size: 1rem;
+            }
+            p.thanku-title{
+                color:$mainColor;
+                font-size: 1.7rem;
+                margin-top: 1rem;
+                margin-bottom: .25rem;
+            }
+
+            button{
+                margin: 1rem .5rem 0;
+            }
+        }
+   }
+}
+
+#checkingNo{
+    .numberList{
+        text-align: center;
+        p.contactNo{
+            font-size: 1.3rem ;
+            span{
+                width: 50%;
+                cursor: pointer;
+                transition: all .35s ease-in;
+                &:hover{
+                    background-color: $mainColor;
+                    color:#fff;
+                }
+            }
+        }
+    }
+}
+
+/*****************************End thank u modal boxes*************************/
 
 
 
