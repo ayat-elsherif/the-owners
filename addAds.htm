@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>The Owners</title>
+      <link rel="shortcut icon" href="images/favicon.png">
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/bootstrap-rtl.css">
+      <link rel="stylesheet" href="css/line-awesome.min.css">
+      <link rel="stylesheet" href="css/all.min.css">
+      <link rel="stylesheet" href="css/animate.css">
+      <link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="css/multiForm.css">
+      <link rel="stylesheet" href="css/style-rtl.css">
+    </head>
+    <body dir='rtl' >
+
+      <div class="scroll-up">
+        <i class="fa fa-chevron-up fa-2x"></i>  
+      </div>
+
+      <!------------navbar modals---------->
+   
+      <!------------end navbar modals---------->
+
+        <!-----navbar---->
+    <header class="container-fluid top_nav pAbs">
+      <div class="container large">
+        <b class="screen-overlay"></b>
+      <div class="row mx-0 justify-content-between align-items-center">
+        
+          <button data-trigger="#navbar_main" class="d-lg-none" type="button"> 
+            <i class="fas fa-align-right fa-2x"></i> 
+          </button>
+
+          <!-------small screens block1--------->
+            <a class="navbar-brand d-block d-xl-none d-lg-none col-md-4 col-6 mr-auto" href="#"><img src="images/logo.png" class="img-fluid"></a>
+          <button class="d-lg-none d-md-block announceProperty" data-toggle="modal" data-target="#announceProp">أعلن عن عقارك</button>
+          <!----------end small screens block1------------->
+      </div>
+      <nav class="navbar navbar-expand-lg navbar-light mobile-offcanvas" id='navbar_main'>  
+          <a class="navbar-brand d-none d-lg-block" href="#"><img src="images/logo.png"></a>
+          <div class=" navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav">
+              <div class="offcanvas-header"> 
+                <button class="btn-close float-left fa fa-2x mx-2"> &times</button>
+              </div>
+              <li class="nav-item d-lg-none d-md-block">
+                <a  class='navbar-brand' href="#"><img src='images/logo.png'></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#whoUs"> <i class="las la-question d-lg-none d-md-inline-block"></i> من نحن <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#"> <i class="las la-search d-lg-none d-md-inline-block"></i> بحث</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="#"> <i class="las la-balance-scale d-lg-none d-md-inline-block"></i> استشارة قانونية</a>
+              </li>
+              <!----------small screens block2 --------->
+              <li class="nav-item d-lg-none d-md-inline-block">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#announceProp"> <i class="las la-plus-circle"></i> إعلن عن عقارك</a>
+              </li>
+              <li class="nav-item d-lg-none d-md-inline-block">
+                <a class="nav-link" href="#"> <i class="lar la-lightbulb"></i> نصائح وإرشادات</a>
+              </li>
+              <li class="nav-item d-lg-none d-md-inline-block">
+                <a class="nav-link" href="#"> <i class="las la-anchor"></i> روابط أخري</a>
+              </li>
+              <li class="nav-item d-lg-none d-md-inline-block">
+                <a class="nav-link" href="#" data-toggle="modal" data-target="#joinUs"> <i class="las la-suitcase"></i> وظائف</a>
+              </li>
+              <li class="nav-item d-lg-none d-md-inline-block">
+                <a class="nav-link" href="#"> <i class="las la-tasks"></i> الأحكام والشروط</a>
+              </li>
+              <!----------end small screens block2--------->
+              <li class="nav-item">
+                  <a class="nav-link" href="#" data-toggle="modal" data-target="#contactUs"><i class="las la-comment-dots d-lg-none d-md-inline-block"></i> اتصل بنا</a>
+              </li>
+            </ul> 
+          <!----------large screens--------->
+            <ul class="navbar-nav ml-lg-auto align-items-center">
+              <li class="nav-item d-none d-lg-block">
+                <a class="nav-link" data-toggle="modal" data-target="#signIn">دخول</a>
+              </li>
+              <li class="nav-item d-none d-lg-block">
+                <a class="nav-link" data-toggle="modal" data-target="#signUp">انشاء حساب</a>
+              </li>
+              <li class="nav-item d-none d-lg-block">
+                <a class="nav-link" href="#">English</a>
+              </li>
+              <button class="nav-link announceProperty d-none d-lg-inline-block" data-toggle="modal" data-target="#announceProp">أعلن عن عقارك</button>
+            </ul>
+            <!----------end large screens--------->
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!----------small screens block3 --------->
+    <div class="sec_nav d-lg-none d-md-block">
+      <ul class="list-inline text-right px-2">
+        <li class="nav-item list-inline-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#signIn">دخول</a>
+        </li>
+        <li class="nav-item list-inline-item">
+          <a class="nav-link" href="#" data-toggle="modal" data-target="#signUp">انشاء حساب</a>
+        </li>
+        <li class="nav-item list-inline-item">
+          <a class="nav-link" href="#">English</a>
+        </li>
+      </ul>
+    </div>
+    <!----------End small screens block3 --------->
+
+
+
+
+
+<!-------------------------Add a property MultiForm------------------------->
+<div class='multiStepFormCont' dir="rtl"> 
+  <!-- multistep form -->
+  <form class="form" id="msform" dir='rtl' style='position: relative;' >
+    <!-- progressbar -->
+    <ul id="progressbar">
+      <li class="active"></li>
+      <li></li>
+      <li></li> 
+    </ul>
+    <!-- End progressbar -->
+    <!-- fieldsets/every fieldset is a single form -->
+    <fieldset class='multiForm'>
+      <div class="form-step">
+        <p class="fs-title">أهلا بك,  <strong>إبدأ بإضافة عقارك</strong></p>
+      
+        <div class="form-group">
+          <label>القسم</label>
+          <select class="form-control" id='propertyCat'>
+            <option class="any" value="any"> اختر القسم</option>
+            <option value="sell">بيع</option>
+            <option value="rent">إيجار</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>نوع العقار</label>
+          <select class="form-control">
+            <option>اختر نوع العقار</option>
+            <option>منزل</option>
+            <option>شقة</option>
+            <option>فيلا</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>تطل علي </label>
+          <select class="form-control">
+            <option>اختر الإطلالة</option>
+            <option>شارع رئيسي</option>
+            <option>شارع جانبي</option>
+            <option>بحر</option>
+          </select>
+        </div>
+        <div class="row" id='propertyAddress'>
+          <div class="form-group col-sm-6">
+            <label>المساحة ( كما مذكورة بسند الملكية)</label>
+            <input class="form-control" type="text" name='propertySize'>
+          </div>
+          <div class="form-group col-sm-3">
+            <label>عدد الغرف</label>
+            <input class="form-control" type="text" name='propertyRoomsNo'>
+          </div>
+          <div class="form-group col-sm-3">
+            <label>عدد الحمامات</label>
+            <input class="form-control" type="text" name='propertyBathNo'>
+          </div>
+          <div class="form-group col-sm-6">
+            <label>الطابق</label>
+            <input class="form-control" type="text" name='propertyFloorNo'>
+          </div>
+          <div class="form-group col-sm-6">
+            <label>نوع التشطيب</label>
+            <input class="form-control" type="text" name='propertyFinishType'>
+          </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-12">
+            <label>العدادات</label>
+            <div class="row">  
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">عداد كهرباء</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">عداد مياه</label>
+              </div>
+              <div class="form-check form-check-inline">
+                <input class="form-check-input" type="checkbox" value="option1">
+                <label class="form-check-label" for="inlineCheckbox1">عداد غاز</label>
+              </div>
+            </div>
+         </div>
+        </div>
+        <div class="row">
+          <div class="form-group col-12" >
+            <label>موقع العقار</label>
+            <div class="row">
+              <div class="form-group col-md-6 col-12">
+                <input class="form-control" type="text" name='propertyAdress' placeholder="..المحافظة">
+              </div>
+              <div class="form-group col-md-6 col-12">
+                <input class="form-control" type="text" name='propertyAdress' placeholder="..المدينة">
+              </div>
+              <div class="form-group col-md-12 col-12">
+                <input class="form-control" type="text" name='propertyAdress' placeholder="..العنوان">
+              </div>
+              <div class="col-md-12 col-12">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.705951209361!2d31.203768495333854!3d30.01659860232441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145846e8ec5db851%3A0x130d30d6096adf14!2sFaisal!5e0!3m2!1sen!2seg!4v1597705556521!5m2!1sen!2seg" width="100%" height="200"></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <input type="button" name="next" class="next action-button" value="التالي" />
+    </fieldset>
+
+
+    <fieldset class='multiForm addPriceProp' id='sellPropertyFrom'>
+      <div class="form-step">
+        
+        
+          <h3 class="main-title">ضع عنوان ونص مناسب لإعلانك</h3>
+          <div class="addRent">
+            
+              <div class="form-group">
+                <label>العنوان (باللغة العربية)</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>نص الإعلان (باللغة العربية )</label>
+                <textarea rows='20' class="form-control"></textarea>
+              </div>
+              <h6 class="main-title mt-4">سعر العقار</h6>
+              <div class="form-group">
+                <label>طريقة الدفع</label>
+                <select type="text" class="form-control">
+                  <option></option>
+                  
+                </select>
+              </div>
+              <div class="form-group">
+                <label>السعر بالجنيه المصري ( غير قابل للتفاوض)</label>
+                <input type="text" class="form-control">
+              </div>
+             <div class="addingContactNoCont">
+              <h6 class="main-title mt-5">رقم التواصل</h6>
+              <div class="form-group" id='contactNoList'>
+              
+              </div>  
+              <label id='contactLabel'><span>أضف رقم </span></label>
+              <div class="row align-items-center">
+                <div class="form-group col-md-6 col-12">
+                  <input type="tel" class="form-control" id="enterContactNo">
+                </div>
+                <div class="form-group col-md-6 col-12">
+                  <a id='addContactNo' class="btn">إضافة</a>
+                </div>
+              </div>
+             </div>
+              <!-- <div class="text-center mt-5 mb-3">
+                <button class="btn btn-primary mx-2">التالي</button>
+                <button class="btn btn-ouline-primary mx-2">رجوع</button>
+              </div> -->
+          
+        </div>
+
+
+      </div>
+      <input type="button" name="next" class="next action-button" value="التالي" />
+      <input type="button" name="previous" class="previous action-button" value="رجوع" />
+
+    </fieldset>
+
+    
+    <fieldset class='multiForm addRentProp' id='rentPropertyFrom'>
+      <div class="form-step">
+        
+        
+          <h3 class="main-title">ضع عنوان ونص مناسب لإعلانك</h3>
+          <div class="addRent">
+           
+              <div class="form-group">
+                <label>العنوان (باللغة العربية)</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>نص الإعلان (باللغة العربية )</label>
+                <textarea rows='20' class="form-control"></textarea>
+              </div>
+              <h6 class="main-title mt-4">قيمة الإيجار</h6>
+              <div class="form-group">
+                <label>قيمة الإيجار الشهري بالجنيه المصري ( غير قابل للتفاوض)</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>قيمة التأمين</label>
+                <input type="text" class="form-control">
+              </div>
+             <div class="addingContactNoCont">
+              <h6 class="main-title mt-5">رقم التواصل</h6>
+              <div class="form-group" id='contactNoList'>
+              
+              </div>  
+              <label id='contactLabel'><span>أضف رقم </span></label>
+              <div class="row align-items-center">
+                <div class="form-group col-md-6 col-12">
+                  <input type="tel" class="form-control" id="enterContactNo">
+                </div>
+                <div class="form-group col-md-6 col-12">
+                  <a id='addContactNo' class="btn">إضافة</a>  
+                </div>
+              </div>
+             </div>
+        </div>
+      </div>
+      <input type="button" name="next" class="next action-button" value="التالي" />
+      <input type="button" name="previous" class="previous action-button" value="رجوع" />
+
+    </fieldset>
+
+
+
+
+    <fieldset class='multiForm'>
+      <div class="form-step">
+        تحت التصميم
+      </div>
+      <input type="submit" name="submit" class="submit action-button" value="ارسال" />
+      <input type="button" name="previous" class="previous action-button" value="رجوع" />
+    </fieldset>
+  </form>
+</div>
+
+
+<!------------------------end Add a property MultiForm----------------------->
+
+
+
+
+
+
+
+
+
+
+<!--------------footer----------------->
+<section class="container-fluid footerCont">
+  <div class="container"> 
+    <div class="row footerBody ">
+      <div class="col-12 mb-3">
+        <h2 class="logoFooter"><img src="images/logo-footer.png" ></h2>
+      </div>
+      <div class="footerBrief col-lg-5 col-12">
+        <p>
+          خدمات ذا أونرز تساعدك على بيع وشراء العقارات بسهولة من أصحابها مباشرة،
+          بعد التحقق التام من صحة أوراق أي عقار وكتابة الوصف القانوني بالإعلان
+          وذلك بهدف مساعدتكم للحصول على عملية شراء أمنة
+        </p>
+        <h4>تابعنا</h4>
+        <p class="footerSocial">
+          <a href="#"><i class="lab la-youtube"></i></a>
+          <a href="#"> <i class="lab la-twitter"></i></a>
+          <a href="#"><i class="lab la-instagram"></i></a>
+          <a href="#"><i class="lab la-facebook-f"></i></a>
+        </p>
+      </div>
+      <div class="col-lg-5 offset-lg-2 d-lg-inline-block d-none ">
+        <div class="row footerServices">
+            <div class="col-lg-6 ">
+              <ul>
+                <li>خدماتنا</li>
+                <li><a href="#" data-toggle="modal" data-target="#announceProp">أعلن عن عقارك</a></li>
+                <li><a href="#">استشارة قانونية</a></li>
+                <li><a href="#">نصائح وإرشادات</a></li>
+              </ul>
+            </div>
+            <div class="col-lg-6">
+              <ul>
+                <li>روابط أخري</li>
+                <li><a href="#" data-toggle="modal" data-target="#joinUs">وظائف</a></li>
+                <li><a href="#" data-toggle="modal" data-target="#contactUs">تواصل معنا</a></li>
+                <li><a href="#">الأحكام والشروط</a></li>
+              </ul>
+            </div>
+        </div>
+      </div>   
+    </div>
+    <div class="copyrightCont container text-center">
+      جميع الحقوق محفوظة ذا أونرز 2020 - تم تطويره بواسطة 
+      <a href="https://www.egnol.com" target="_blank">اجنول للبرمجيات</a>
+    </div>
+  </div>
+</section>
+
+
+        <script src="js/jquery-3.4.1.min.js"></script>
+        <script src='js/jquery.easing.min.js'></script>       
+        <script src="js/bootstrap.bundle.min.js"></script>    
+        <script src='js/WOW.js'></script>
+        <script src="js/script.js"></script>
+        <script>
+          function editRow(rowNo) {
+            $('#enterContactNo').val( $('#phoneNo'+rowNo).text() );
+            currentNo = rowNo;
+            $('#contactLabel').html('<strong class="animated fadeInUp">تعديل الرقم</strong>');
+            $('#addContactNo').html('<span class="animated fadeInUp">تعديل </span>')
+          }
+          function saveEdits()
+          {
+            $('#contactLabel').html('<strong class="animated fadeInUp">أضف رقم آخر</strong>');
+            $('#addContactNo').html('إضافة');
+              $('#phoneNo'+currentNo).html('<span class="animated fadeIn">' + $('#enterContactNo').val() + '</span>' );
+              $("#enterContactNo").val("");
+              currentNo = -1;
+          }
+          function deleteRow(rowNo)
+          {
+              $('#row'+rowNo).remove();
+          }
+          
+        </script>
+    </body>
+</html>

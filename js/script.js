@@ -63,12 +63,6 @@ $(function(){
 
 	/***********************add another contact number ******************* */
 
-	// $('#addContactNo').click(function(e){
-	// 	e.preventDefault();
-	// 	e.stopPropagation();
-	// 	HvacStandards();
-
-	// });
 
 
 
@@ -124,19 +118,30 @@ function toAddNo() {
 var current_fs, next_fs, previous_fs; //.multiForm
 var left, opacity, scale; //.multiForm properties which we will animate
 var animating; //flag to prevent quick multi-click glitches
-
+let count=1;
 $(".next").click(function(){
 	if(animating) return false;
 	animating = true;
 	
 	current_fs = $(this).parent();
 	next_fs = $(this).parent().next();
+
+		//activate next step on progressbar using the index of next_fs
+		count++;
+		$(`#progressbar li:nth-child(${count})`).addClass("active");
+		console.log($(`#progressbar li:nth-child(${count})`));
+		
+	if(next_fs.hasClass('hidden')){
+		next_fs=next_fs.next(); 
+
+	}else{
+		next_fs=next_fs;
 	
-	//activate next step on progressbar using the index of next_fs
-	$("#progressbar li").eq($(".multiForm").index(next_fs)).addClass("active");
-	
+	}
+
 	//show the next .multiForm
-	next_fs.show(); 
+	
+	next_fs.show();
 	//hide the current .multiForm with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
@@ -171,9 +176,15 @@ $(".previous").click(function(){
 	previous_fs = $(this).parent().prev();
 	
 	//de-activate current step on progressbar
-	$("#progressbar li").eq($(".multiForm").index(current_fs)).removeClass("active");
-	
+	$(`#progressbar li:nth-child(${count})`).removeClass("active");
+	console.log($(`#progressbar li:nth-child(${count})`));
+	count--;
 	//show the previous .multiForm
+	if(previous_fs.hasClass('hidden')){
+		previous_fs=previous_fs.prev(); 
+	}else{
+		previous_fs=previous_fs;
+	}
 	previous_fs.show(); 
 	//hide the current .multiForm with style
 	current_fs.animate({opacity: 0}, {
@@ -202,6 +213,25 @@ $(".submit").click(function(){
 	return false;
 })
 
+
+let propertyCat=document.getElementById('propertyCat');
+let sellPropertyFrom=document.getElementById('sellPropertyFrom');
+let rentPropertyFrom=document.getElementById('rentPropertyFrom');
+$(propertyCat).change(function(){
+	$('.next').click(function(e){
+		e.stopPropagation();
+			e.preventDefault();
+		if(propertyCat.value=="rent"){	
+			$(sellPropertyFrom).addClass('hidden').removeClass('showME');
+			$(rentPropertyFrom).removeClass('hidden').addClass('showME');
+			
+		}else if(propertyCat.value=="sell"){
+			$(rentPropertyFrom).addClass('hidden').removeClass('showME');
+			$(sellPropertyFrom).removeClass('hidden').addClass('showME');
+			}
+		console.log(propertyCat.value);
+	});
+});
 /***************************End Add a property MultiForm************************** */
 
 
