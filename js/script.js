@@ -63,48 +63,45 @@ $(function(){
 
 	/***********************add another contact number ******************* */
 
+$('.addContactNoSell').click(function(){
+	toAddNo('.enterContactNoSell', '#contactNoList1','Sell');
+});
 
-
-
-
-
-
-
-
-
-$('#addContactNo').click(function(){
-	toAddNo();
+$('.addContactNoRent').click(function(){
+	toAddNo('.enterContactNoRent','#contactNoList2','Rent');
 });
 
 
 newNo = 1;
 currentNo = -1;
 
-function toAddNo() {
+function toAddNo(enterContactNo,contactNoList,cat) {
 	var rowNo = newNo;
-	if($("#enterContactNo").val()==''){
+	if($(enterContactNo).val()==''){
 		alert('من فضلك ادخل رقم الهاتف');
 	}
-	else if(isNaN($("#enterContactNo").val())){
+	else if(isNaN($(enterContactNo).val())){
 		alert('ادخل أرقام فقط ');
 	}
     else if (currentNo>0) {
-		saveEdits();
+		saveEdits(cat);
 		
     } else {
-        var contactNo = $("#enterContactNo").val();
+        var contactNo = $(enterContactNo).val();
         var sHtml = `
         <div class='mb-3' id='row${rowNo}'>
 			<p class='contactNo mb-0 animated fadeIn' id='phoneNo${rowNo}'><span>${contactNo}</span></p>
 			<div class='editingNo'>
-				<span class='editRow' onclick='editRow(${rowNo})' > <i class="las la-pen"></i> تعديل </span>&nbsp;
-				<span class='deleteRow' onclick='deleteRow(${rowNo})'> <i class="las la-times"></i> حذف</span>
+				<span class='editRow' onclick='editRow(${rowNo}, "${cat}")' > 
+					<i class="las la-pen"></i> تعديل </span>&nbsp;
+				<span class='deleteRow' onclick='deleteRow(${rowNo}, "${cat}")'> 
+					<i class="las la-times"></i> حذف</span>
 			</div>
 		</div>`;
-        $("#contactNoList").append(sHtml);
+        $(contactNoList).append(sHtml);
         newNo++;
-		$("#enterContactNo").val("");
-		$('#contactLabel').html('أضف رقم آخر');
+		$(enterContactNo).val("");
+		$('#contactLabel'+cat).html('أضف رقم آخر');
 
     }
 }
@@ -162,10 +159,12 @@ $(".next").click(function(){
 		complete: function(){
 			current_fs.hide();
 			animating = false;
+			$('html,body').scrollTop(0);
 		}, 
 		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
 	});
+	
 });
 
 $(".previous").click(function(){
@@ -203,6 +202,7 @@ $(".previous").click(function(){
 		complete: function(){
 			current_fs.hide();
 			animating = false;
+			$('html,body').scrollTop(0);
 		}, 
 		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
@@ -222,12 +222,12 @@ $(propertyCat).change(function(){
 		e.stopPropagation();
 			e.preventDefault();
 		if(propertyCat.value=="rent"){	
-			$(sellPropertyFrom).addClass('hidden').removeClass('showME');
-			$(rentPropertyFrom).removeClass('hidden').addClass('showME');
+			$(sellPropertyFrom).addClass('hidden').removeClass('showME').css('opacity','0');
+			$(rentPropertyFrom).removeClass('hidden').addClass('showME').css({'opacity':'1','right':'0%'});
 			
 		}else if(propertyCat.value=="sell"){
-			$(rentPropertyFrom).addClass('hidden').removeClass('showME');
-			$(sellPropertyFrom).removeClass('hidden').addClass('showME');
+			$(rentPropertyFrom).addClass('hidden').removeClass('showME').css('opacity','0');
+			$(sellPropertyFrom).removeClass('hidden').addClass('showME').css({'opacity':'1','right':'0%'});
 			}
 		console.log(propertyCat.value);
 	});
@@ -235,4 +235,53 @@ $(propertyCat).change(function(){
 /***************************End Add a property MultiForm************************** */
 
 
+
+/******************************************************** */
+// $(".buttonFile").click(function () {
+//   let hidFile = $(this).next(".hiddenFile");
+//   hidFile.click().change(function () {
+//     function readURL(input) {
+//       if (input.files && input.files[0]) {
+//         var reader = new FileReader();
+//         reader.onload = function (e) {
+//           hidFile.prev().children('.displayImg').attr('src', e.target.result);
+//         }
+//         reader.readAsDataURL(input.files[0]);
+//       }
+//     }
+//     readURL(this);
+//     $(this).prev().addClass("changed");
+
+//     let fileVal = $(this).val();
+//     fileVal = fileVal.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+//     $(this).next(".fileDesc").text(fileVal);
+//   });
+
+// });
+
+
+let propVidbtns=document.querySelectorAll('.propVidBtn');
+let propVidFiles=document.querySelectorAll('.propVidFile');
+let propVidNames=document.querySelectorAll('.propVidName');
+
+$(propVidFiles).hide();
+for (let btn of propVidbtns){
+	$(btn).click(function(){
+		console.log(btn);
+		$(this).next(propVidFiles).click();	
+	});
+}
+$(propVidFiles).change(function(){
+	
+	let fileVal = $(this).val();
+    fileVal = fileVal.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+	
+	$(this).parents('.propVid')
+	.find('.propProgress').progressBarTimer(
+		{
+			autostart: true // default false
+	});
+	$(this).parents('.propVid').find(propVidNames).text(fileVal);
 });
+});
+

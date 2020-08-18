@@ -129,7 +129,8 @@
     </ul>
     <!-- End progressbar -->
     <!-- fieldsets/every fieldset is a single form -->
-    <fieldset class='multiForm'>
+
+<fieldset class='multiForm'>
       <div class="form-step">
         <p class="fs-title">أهلا بك,  <strong>إبدأ بإضافة عقارك</strong></p>
       
@@ -205,10 +206,15 @@
             <label>موقع العقار</label>
             <div class="row">
               <div class="form-group col-md-6 col-12">
-                <input class="form-control" type="text" name='propertyAdress' placeholder="..المحافظة">
+                <select class="form-control" type="text" name='propertyGov'>
+                  <option>..المحافظة</option>
+                  <option>القاهرة</option>
+                  <option>الجيزة</option>
+                  <option>الاسكندرية</option>
+                  </select>
               </div>
               <div class="form-group col-md-6 col-12">
-                <input class="form-control" type="text" name='propertyAdress' placeholder="..المدينة">
+                <input class="form-control" type="text" name='propertyCity' placeholder="..المدينة">
               </div>
               <div class="form-group col-md-12 col-12">
                 <input class="form-control" type="text" name='propertyAdress' placeholder="..العنوان">
@@ -221,10 +227,10 @@
         </div>
       </div>
       <input type="button" name="next" class="next action-button" value="التالي" />
-    </fieldset>
+    </fieldset> 
 
 
-    <fieldset class='multiForm addPriceProp' id='sellPropertyFrom'>
+   <fieldset class='multiForm addPriceProp' id='sellPropertyFrom'>
       <div class="form-step">
         
         
@@ -253,24 +259,19 @@
               </div>
              <div class="addingContactNoCont">
               <h6 class="main-title mt-5">رقم التواصل</h6>
-              <div class="form-group" id='contactNoList'>
+              <div class="form-group" id='contactNoList1'>
               
               </div>  
-              <label id='contactLabel'><span>أضف رقم </span></label>
+              <label id='contactLabel1' class='contactLabelSell'><span>أضف رقم </span></label>
               <div class="row align-items-center">
                 <div class="form-group col-md-6 col-12">
-                  <input type="tel" class="form-control" id="enterContactNo">
+                  <input type="tel" class="form-control enterContactNo enterContactNoSell" id="enterContactNo1">
                 </div>
                 <div class="form-group col-md-6 col-12">
-                  <a id='addContactNo' class="btn">إضافة</a>
+                  <a id='addContactNo1' class="btn addContactNoSell">إضافة</a>
                 </div>
               </div>
-             </div>
-              <!-- <div class="text-center mt-5 mb-3">
-                <button class="btn btn-primary mx-2">التالي</button>
-                <button class="btn btn-ouline-primary mx-2">رجوع</button>
-              </div> -->
-          
+             </div>          
         </div>
 
 
@@ -280,8 +281,7 @@
 
     </fieldset>
 
-    
-    <fieldset class='multiForm addRentProp' id='rentPropertyFrom'>
+<fieldset class='multiForm addRentProp' id='rentPropertyFrom'>
       <div class="form-step">
         
         
@@ -307,16 +307,16 @@
               </div>
              <div class="addingContactNoCont">
               <h6 class="main-title mt-5">رقم التواصل</h6>
-              <div class="form-group" id='contactNoList'>
+              <div class="form-group" id='contactNoList2'>
               
               </div>  
-              <label id='contactLabel'><span>أضف رقم </span></label>
-              <div class="row align-items-center">
+              <label id='contactLabel2'  class='contactLabelRent'><span>أضف رقم </span></label>
+              <div class="row align-items-center mb-5">
                 <div class="form-group col-md-6 col-12">
-                  <input type="tel" class="form-control" id="enterContactNo">
+                  <input type="tel" class="form-control enterContactNo enterContactNoRent" id="enterContactNo2">
                 </div>
                 <div class="form-group col-md-6 col-12">
-                  <a id='addContactNo' class="btn">إضافة</a>  
+                  <a id='addContactNo2' class="btn addContactNoRent">إضافة</a>  
                 </div>
               </div>
              </div>
@@ -330,11 +330,80 @@
 
 
 
-    <fieldset class='multiForm'>
+    <fieldset class='multiForm addPropVideos' id='propertyVideos'>
       <div class="form-step">
-        تحت التصميم
+        
+        
+        <h3 class="main-title">ملفات الفيديو</h3>
+        <div class="addVideos">    
+          <div class="form-group">
+            <label>تحميل فيديو العقار الداخلي</label>
+            <div class="row propVid">
+              <div class="col-md-6">
+                <a  class="btn btn-dark propVidBtn"> 
+                  <i class="las la-plus-circle"></i> تحميل</a>
+                <input type="file" class="propVidFile" accept="video/*">
+              </div>
+              <div class="col-md-6 mt-1" dir="ltr">
+                <div class="propProgress"></div>
+                <label class="propVidName"></label> 
+                <!-- <button class="progressClose"> x </button> -->
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>تحميل فيديو العقار الخارجي</label>
+            <div class="row propVid">
+              <div class="col-md-6">
+                <a  class="btn btn-dark propVidBtn"> 
+                  <i class="las la-plus-circle"></i> تحميل</a>
+                <input type="file" class="propVidFile" accept="video/*">
+                
+              </div>
+              <div class="col-md-6 mt-1" dir="ltr">
+                <div class="propProgress"></div>
+                <label class="propVidName"></label> 
+                <!-- <button class="progressClose"> x </button> -->
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>تحميل صورة مبني العقار</label>
+            <div class="row propVid">
+              <div class="col-md-6">
+                <a class="btn btn-dark propVidBtn"> 
+                  <i class="las la-plus-circle"></i> تحميل</a>
+                <input type="file" class="propVidFile" accept="image/*">
+              </div>
+              <div class="col-md-6 mt-1" dir="ltr">
+                <div class="propProgress"></div>
+                <label class="propVidName"></label> 
+                <!-- <button class="progressClose"> x </button> -->
+              </div>
+            </div>
+          </div>
+          
+          <h3 class="main-title mt-5 mb-1">سندات الملكية</h3>
+
+          <div class="form-group mb-5">
+            <label class="w-50">قم بتحميل جميع صور مستندات الملكية
+              مع صورة بطاقة الرقم القومي للمالك </label>
+              <div class="row propVid">
+                <div class="col-md-6">
+                  <a class="btn btn-dark propVidBtn"> 
+                    <i class="las la-plus-circle"></i> تحميل</a>
+                  <input type="file" class="propVidFile" accept=".pdf,image/*" multiple>
+                  <label class="propVidName"></label> 
+                </div>
+                <div class="col-md-6 mt-2" dir="ltr">
+                  <div class="propProgress"></div>
+                  <!-- <button class="progressClose"> x </button> -->
+                </div>
+              </div>
+          </div>
       </div>
-      <input type="submit" name="submit" class="submit action-button" value="ارسال" />
+    </div>
+      <input type="submit" name="submit" class="submit action-button" value="إنهاء" />
       <input type="button" name="previous" class="previous action-button" value="رجوع" />
     </fieldset>
   </form>
@@ -406,27 +475,31 @@
         <script src='js/jquery.easing.min.js'></script>       
         <script src="js/bootstrap.bundle.min.js"></script>    
         <script src='js/WOW.js'></script>
+        <script src='js/jquery.progressBarTimer.min.js'></script>
         <script src="js/script.js"></script>
         <script>
-          function editRow(rowNo) {
-            $('#enterContactNo').val( $('#phoneNo'+rowNo).text() );
+          function editRow(rowNo,cat) {
+            $('.enterContactNo'+cat).val($('#phoneNo'+rowNo).text());
             currentNo = rowNo;
-            $('#contactLabel').html('<strong class="animated fadeInUp">تعديل الرقم</strong>');
-            $('#addContactNo').html('<span class="animated fadeInUp">تعديل </span>')
+            $('.contactLabel'+cat).html('<strong class="animated fadeInUp">تعديل الرقم</strong>');
+            $('.addContactNo'+cat).html('<span class="animated fadeInUp">تعديل </span>')
           }
-          function saveEdits()
+          function saveEdits(cat)
           {
-            $('#contactLabel').html('<strong class="animated fadeInUp">أضف رقم آخر</strong>');
-            $('#addContactNo').html('إضافة');
-              $('#phoneNo'+currentNo).html('<span class="animated fadeIn">' + $('#enterContactNo').val() + '</span>' );
-              $("#enterContactNo").val("");
+            $('.contactLabel'+cat).html('<strong class="animated fadeInUp">أضف رقم آخر</strong>');
+            $('.addContactNo'+cat).html('إضافة');
+              $('#phoneNo'+currentNo).html('<span class="animated fadeIn">' + $('.enterContactNo'+cat).val() + '</span>' );
+              $(".enterContactNo"+cat).val("");
               currentNo = -1;
           }
           function deleteRow(rowNo)
           {
               $('#row'+rowNo).remove();
           }
-          
+         
+
+
+        
         </script>
     </body>
 </html>

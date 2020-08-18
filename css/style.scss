@@ -192,6 +192,17 @@ a.btn {
 }
 
 
+.progress{
+    border-radius: 0 !important;
+    height: 1.3rem;
+    .progress-bar{
+        background-color: $secColor;
+        &.bg-success{
+            background-color: $mainColor !important;
+        }
+    }
+}
+
 .container.large {
     max-width: 1400px;
 }
@@ -1027,7 +1038,7 @@ body.offcanvas-active {
 
 /***********************edit owner/add rent/add price/ owner ads pages**********************/
 
-.editOwnerCont,.addRentProp, .addPriceProp, .adsOwnerCont{
+.editOwnerCont,.addRentProp, .addPriceProp, .adsOwnerCont,.addPropVideos{
     width: 45%;
     padding:2rem 3rem;
     margin: 50px auto;
@@ -1075,14 +1086,13 @@ body.offcanvas-active {
                 color:$mainColor
             }
         }
-        #addContactNo{
+        .addContactNoSell,.addContactNoRent{
             padding: 0 1.5rem .25rem;
             font-size: 1em;
         }
     }
 }
 /**********************************end property for rent Form*****************************/
-
 
 
 /**********************************Owners Ads*****************************/
@@ -1114,6 +1124,7 @@ body.offcanvas-active {
     }
 }
 /******************************end Owners Ads***************************/
+
 
 /******************************conditions*********************************/
 .conditionsCont, .advicesCont{
@@ -1163,7 +1174,6 @@ body.offcanvas-active {
 /*****************************thank u modal boxes*************************/
 .thankUCont{
     margin-top:5%;
- 
 }
 #revisingData, #checkingNo{
    .modal-dialog{
@@ -1229,7 +1239,6 @@ body.offcanvas-active {
 .multiStepFormCont{
     height: 1000px;
     min-height: 1250px;
-    overflow-x:hidden;
     #msform {
         width: 55%;
         margin: 50px auto;
@@ -1283,6 +1292,21 @@ body.offcanvas-active {
                 }
               
             }
+            &.addPropVideos{
+                .propVidBtn{
+                    background: #b0b0b0 !important;
+                    padding: 0px 15px 5px !important;
+                    font-size: .85rem;
+                    border: none;
+                    border-radius: 3px;
+                    &:hover, &:focus{
+                        background: darken($color: #b0b0b0, $amount: 10%) !important; 
+                    }
+                }
+                label{
+                    display: block;
+                }
+            }
             @media screen and (max-width:991px){
                 width:90%;
                 margin:0 5%;
@@ -1290,6 +1314,9 @@ body.offcanvas-active {
                 .form-step{
                     margin-bottom:0;
                     .form-group{
+                        label{
+                            font-size: .8rem;
+                        }
                         .form-control{
                             padding: 0px 10px 5px;
                             height: 34px;
@@ -1339,6 +1366,10 @@ body.offcanvas-active {
                 width: 80px;
             }
         }
+    }
+    @media screen and (max-width:1199px){
+        overflow-x:hidden;
+
     }
     @media screen and (max-width:767px) {
         min-height: 1350px;
