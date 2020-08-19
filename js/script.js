@@ -110,11 +110,10 @@ function toAddNo(enterContactNo,contactNoList,cat) {
 
 
 /******************************Add a property MultiForm***************************** */
-    
-//jQuery time
+
 var current_fs, next_fs, previous_fs; //.multiForm
-var left, opacity, scale; //.multiForm properties which we will animate
-var animating; //flag to prevent quick multi-click glitches
+var left, opacity, scale; 
+var animating; 
 let count=1;
 $(".next").click(function(){
 	if(animating) return false;
@@ -123,7 +122,6 @@ $(".next").click(function(){
 	current_fs = $(this).parent();
 	next_fs = $(this).parent().next();
 
-		//activate next step on progressbar using the index of next_fs
 		count++;
 		$(`#progressbar li:nth-child(${count})`).addClass("active");
 		console.log($(`#progressbar li:nth-child(${count})`));
@@ -136,18 +134,12 @@ $(".next").click(function(){
 	
 	}
 
-	//show the next .multiForm
 	
 	next_fs.show();
-	//hide the current .multiForm with style
 	current_fs.animate({opacity: 0}, {
 		step: function(now, mx) {
-			//as the opacity of current_fs reduces to 0 - stored in "now"
-			//1. scale current_fs down to 80%
 			scale = 1 - (1 - now) * 0.2;
-			//2. bring next_fs from the right(50%)
 			right = (now * 50)+"%";
-			//3. increase opacity of next_fs to 1 as it moves in
 			opacity = 1 - now;
 			current_fs.css({
         'transform': 'scale('+scale+')',
@@ -161,7 +153,6 @@ $(".next").click(function(){
 			animating = false;
 			$('html,body').scrollTop(0);
 		}, 
-		//this comes from the custom easing plugin
 		easing: 'easeInOutBack'
 	});
 	
@@ -222,11 +213,11 @@ $(propertyCat).change(function(){
 		e.stopPropagation();
 			e.preventDefault();
 		if(propertyCat.value=="rent"){	
-			$(sellPropertyFrom).addClass('hidden').removeClass('showME').css('opacity','0');
+			$(sellPropertyFrom).addClass('hidden').removeClass('showME').css({'opacity':'0','right':'50%'});
 			$(rentPropertyFrom).removeClass('hidden').addClass('showME').css({'opacity':'1','right':'0%'});
 			
 		}else if(propertyCat.value=="sell"){
-			$(rentPropertyFrom).addClass('hidden').removeClass('showME').css('opacity','0');
+			$(rentPropertyFrom).addClass('hidden').removeClass('showME').css({'opacity':'0','right':'50%'});
 			$(sellPropertyFrom).removeClass('hidden').addClass('showME').css({'opacity':'1','right':'0%'});
 			}
 		console.log(propertyCat.value);
@@ -236,52 +227,82 @@ $(propertyCat).change(function(){
 
 
 
-/******************************************************** */
-// $(".buttonFile").click(function () {
-//   let hidFile = $(this).next(".hiddenFile");
-//   hidFile.click().change(function () {
-//     function readURL(input) {
-//       if (input.files && input.files[0]) {
-//         var reader = new FileReader();
-//         reader.onload = function (e) {
-//           hidFile.prev().children('.displayImg').attr('src', e.target.result);
-//         }
-//         reader.readAsDataURL(input.files[0]);
-//       }
-//     }
-//     readURL(this);
-//     $(this).prev().addClass("changed");
+/*****************************videos and document uploading*************************** */
 
-//     let fileVal = $(this).val();
-//     fileVal = fileVal.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
-//     $(this).next(".fileDesc").text(fileVal);
-//   });
-
-// });
-
-
-let propVidbtns=document.querySelectorAll('.propVidBtn');
-let propVidFiles=document.querySelectorAll('.propVidFile');
-let propVidNames=document.querySelectorAll('.propVidName');
-
-$(propVidFiles).hide();
-for (let btn of propVidbtns){
-	$(btn).click(function(){
-		console.log(btn);
-		$(this).next(propVidFiles).click();	
-	});
-}
-$(propVidFiles).change(function(){
+	let propVidbtns=document.querySelectorAll('.propVidBtn');
+	let propVidFiles=document.querySelectorAll('.propVidFile');
+	let propVidNames=document.querySelectorAll('.propVidName');
+	let propDocument=document.getElementById('propDocument');
+	let documentList=[];
+	let text='';
+	let documentNo=1;
+	$(propVidFiles, propDocument).hide();
+	for (let btn of propVidbtns){
+		$(btn).click(function(){
+			// console.log(btn);
+			$(this).next(propVidFiles).click();	
+		});
+	}
+	$(propVidFiles).change(function(){
 	
-	let fileVal = $(this).val();
-    fileVal = fileVal.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+		let fileVal = $(this).val();
+		fileVal = fileVal.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+		if(fileVal.length > 10){
+		fileVal=fileVal.slice(0,10) +'..';
+	}
 	
-	$(this).parents('.propVid')
-	.find('.propProgress').progressBarTimer(
+	let myPRogress=$(this).parents('.propVid').find('.propProgress');
+	myPRogress.progressBarTimer(
 		{
-			autostart: true // default false
+			autostart:true,
+			timeLimit:5,
+			label : {
+                show: true, //show label inside progress bar
+                type: 'percent' //type of label. Allowable types: 'percent' => 30% , 'seconds' => 23/60
+			},
+			onFinish:function() {
+				$(myPRogress).hide();
+				$(myPRogress).next(propVidNames).addClass('animated fadeIn');
+			}
+		});
+		
+		$(this).parents('.propVid').find(propVidNames).text(fileVal);
 	});
-	$(this).parents('.propVid').find(propVidNames).text(fileVal);
-});
+
+	$(propDocument).change(function(){
+			for(let i=0;i<propDocument.files.length;i++){
+				let fileVal = $(this).val();
+				fileVal = fileVal.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+				if(fileVal.length > 10){
+				fileVal=fileVal.slice(0,10) +'..';
+				}
+				//making ids for the elements down in text
+			text+=`<div id="documentNo${documentNo}"><div class="propProgress" id='progress${documentNo}'></div>
+				<p id="document${documentNo}"> ${fileVal} </p>
+			</div>`;
+			documentList.push(propDocument.files[i]);
+			$('.doucmentsGroup').append(text);
+			documentNo++;
+			text='';
+		}
+		$(this).parents('.propVid').find('.progressClose').show();
+		let myPRogress=$(this).parents('.propVid').find('.propProgress');
+		myPRogress.progressBarTimer(
+		{
+			autostart:true,
+			timeLimit: 15,
+			label : {
+                show: true, //show label inside progress bar
+                type: 'percent' //type of label. Allowable types: 'percent' => 30% , 'seconds' => 23/60
+			},
+			onFinish:function() {
+					$(myPRogress).hide();
+					$(myPRogress).next('.propVidName').addClass('animated bounce');
+			}
+		});
+		
+	});
+
 });
 
+/*****************************End videos and document uploading*************************** */

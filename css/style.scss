@@ -251,6 +251,7 @@ a.btn {
 textarea.form-control{
     padding: 15px 10px !important;
     font-size: 1rem;
+    height: auto !important;
 }
 .styleSelect select {
     background: transparent;
@@ -1238,9 +1239,9 @@ body.offcanvas-active {
 /*form styles*/
 .multiStepFormCont{
     height: 1000px;
-    min-height: 1250px;
+    min-height: 1400px;
     #msform {
-        width: 55%;
+        width: 60%;
         margin: 50px auto;
         text-align: center;
         position: relative;
@@ -1288,6 +1289,11 @@ body.offcanvas-active {
                         height: 42px;
                         font-size: 1rem;
                         border: 1.2px solid #c8c8c8;
+                    }
+                    label.w-50{
+                        @media screen and (max-width:575px) {
+                            width:100% !important;
+                        }
                     }
                 }
               
@@ -1343,13 +1349,13 @@ body.offcanvas-active {
             border: 0 none;
             border-radius: 10px;
             cursor: pointer;
-            padding: 10px 5px;
+            padding: 0px 5px 8px;
             margin: 10px 5px;
-    
+            font-size:1.2rem;
             &.previous {
                 background-color: transparent;
-                color: $secColor;
-                border: 1px solid $secColor;
+                color: $mainColor;
+                border: 1px solid $mainColor;
             }
     
             &:hover,
@@ -1358,6 +1364,9 @@ body.offcanvas-active {
                 color: #ddd;
                 outline: none;
             }
+        }
+        @media screen and (max-width:1199px) {
+            width: 70%;
         }
         @media screen and (max-width:991px) {
             width: 80%; 
@@ -1372,7 +1381,7 @@ body.offcanvas-active {
 
     }
     @media screen and (max-width:767px) {
-        min-height: 1450px;
+        min-height: 1550px;
     }
 }
 

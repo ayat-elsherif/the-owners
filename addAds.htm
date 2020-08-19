@@ -121,16 +121,18 @@
 <div class='multiStepFormCont' dir="rtl"> 
   <!-- multistep form -->
   <form class="form" id="msform" dir='rtl' style='position: relative;' >
-    <!-- progressbar -->
+    <!-- MultiForm counter -->
     <ul id="progressbar">
       <li class="active"></li>
       <li></li>
       <li></li> 
     </ul>
-    <!-- End progressbar -->
+    <!-- End MultiForm counter -->
+
+
     <!-- fieldsets/every fieldset is a single form -->
 
-<fieldset class='multiForm'>
+   <fieldset class='multiForm'>
       <div class="form-step">
         <p class="fs-title">أهلا بك,  <strong>إبدأ بإضافة عقارك</strong></p>
       
@@ -161,23 +163,31 @@
           </select>
         </div>
         <div class="row" id='propertyAddress'>
-          <div class="form-group col-sm-6">
-            <label>المساحة ( كما مذكورة بسند الملكية)</label>
+          <div class="form-group col-md-6">
+            <label>المساحة ( المذكورة بسند الملكية)</label>
             <input class="form-control" type="text" name='propertySize'>
           </div>
-          <div class="form-group col-sm-3">
+          <div class="form-group col-md-6">
+            <label>مساحة الأرض</label>
+            <input class="form-control" type="text" name='propertyRoomsNo'>
+          </div>
+          <div class="form-group col-md-6">
+            <label>سنة البناء والتسليم</label>
+            <input class="form-control" type="text" name='propertyBathNo'>
+          </div>
+          <div class="form-group col-md-3">
             <label>عدد الغرف</label>
             <input class="form-control" type="text" name='propertyRoomsNo'>
           </div>
-          <div class="form-group col-sm-3">
+          <div class="form-group col-md-3">
             <label>عدد الحمامات</label>
             <input class="form-control" type="text" name='propertyBathNo'>
           </div>
-          <div class="form-group col-sm-6">
+          <div class="form-group col-md-6">
             <label>الطابق</label>
             <input class="form-control" type="text" name='propertyFloorNo'>
           </div>
-          <div class="form-group col-sm-6">
+          <div class="form-group col-md-6">
             <label>نوع التشطيب</label>
             <input class="form-control" type="text" name='propertyFinishType'>
           </div>
@@ -207,17 +217,19 @@
             <div class="row">
               <div class="form-group col-md-6 col-12">
                 <select class="form-control" type="text" name='propertyGov'>
-                  <option>..المحافظة</option>
+                  <option>المحافظة..</option>
                   <option>القاهرة</option>
                   <option>الجيزة</option>
                   <option>الاسكندرية</option>
                   </select>
               </div>
               <div class="form-group col-md-6 col-12">
-                <input class="form-control" type="text" name='propertyCity' placeholder="..المدينة">
+                <select class="form-control" type="text" name='propertyCity'>
+                  <option>المدينة..</option>
+                  </select>
               </div>
               <div class="form-group col-md-12 col-12">
-                <input class="form-control" type="text" name='propertyAdress' placeholder="..العنوان">
+                <input class="form-control" type="text" name='propertyAdress' placeholder="العنوان..">
               </div>
               <div class="col-md-12 col-12">
                 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3454.705951209361!2d31.203768495333854!3d30.01659860232441!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x145846e8ec5db851%3A0x130d30d6096adf14!2sFaisal!5e0!3m2!1sen!2seg!4v1597705556521!5m2!1sen!2seg" width="100%" height="200"></iframe>
@@ -227,10 +239,9 @@
         </div>
       </div>
       <input type="button" name="next" class="next action-button" value="التالي" />
-    </fieldset> 
+    </fieldset>  
 
-
-   <fieldset class='multiForm addPriceProp' id='sellPropertyFrom'>
+ <fieldset class='multiForm addPriceProp' id='sellPropertyFrom'>
       <div class="form-step">
         
         
@@ -243,7 +254,7 @@
               </div>
               <div class="form-group">
                 <label>نص الإعلان (باللغة العربية )</label>
-                <textarea rows='20' class="form-control"></textarea>
+                <textarea rows='15' class="form-control"></textarea>
               </div>
               <h6 class="main-title mt-4">سعر العقار</h6>
               <div class="form-group">
@@ -279,9 +290,9 @@
       <input type="button" name="next" class="next action-button" value="التالي" />
       <input type="button" name="previous" class="previous action-button" value="رجوع" />
 
-    </fieldset>
-
-<fieldset class='multiForm addRentProp' id='rentPropertyFrom'>
+    </fieldset> 
+ 
+  <fieldset class='multiForm addRentProp' id='rentPropertyFrom'>
       <div class="form-step">
         
         
@@ -294,7 +305,7 @@
               </div>
               <div class="form-group">
                 <label>نص الإعلان (باللغة العربية )</label>
-                <textarea rows='20' class="form-control"></textarea>
+                <textarea rows='15' class="form-control"></textarea>
               </div>
               <h6 class="main-title mt-4">قيمة الإيجار</h6>
               <div class="form-group">
@@ -325,10 +336,7 @@
       <input type="button" name="next" class="next action-button" value="التالي" />
       <input type="button" name="previous" class="previous action-button" value="رجوع" />
 
-    </fieldset>
-
-
-
+    </fieldset> 
 
     <fieldset class='multiForm addPropVideos' id='propertyVideos'>
       <div class="form-step">
@@ -345,9 +353,10 @@
                 <input type="file" class="propVidFile" accept="video/*">
               </div>
               <div class="col-md-6 mt-1" dir="ltr">
-                <div class="propProgress"></div>
+                <div class="propProgress">
+                  <a class="progressClose" style='display: none'> x </a>
+                </div>
                 <label class="propVidName"></label> 
-                <!-- <button class="progressClose"> x </button> -->
               </div>
             </div>
           </div>
@@ -392,11 +401,11 @@
                 <div class="col-md-6">
                   <a class="btn btn-dark propVidBtn"> 
                     <i class="las la-plus-circle"></i> تحميل</a>
-                  <input type="file" class="propVidFile" accept=".pdf,image/*" multiple>
-                  <label class="propVidName"></label> 
+                  <input type="file" class="propVidFile" id='propDocument' accept=".pdf,image/*">
                 </div>
-                <div class="col-md-6 mt-2" dir="ltr">
-                  <div class="propProgress"></div>
+                <div class="col-md-6 mt-2 doucmentsGroup" dir="ltr">
+                  <!-- <div class="propProgress"></div>
+                  <label class="propVidName"></label>  -->
                   <!-- <button class="progressClose"> x </button> -->
                 </div>
               </div>
@@ -496,10 +505,8 @@
           {
               $('#row'+rowNo).remove();
           }
-         
-
-
         
+  
         </script>
     </body>
 </html>
