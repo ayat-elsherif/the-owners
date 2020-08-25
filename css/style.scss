@@ -160,7 +160,10 @@ button.close {
 .text-muted{
     color:#9ba1a5 !important;
 }
-
+.sticky{
+    position: sticky;
+    top:20px;
+}
 a.btn {
     color: #eee;
     border-radius: 15px;
@@ -203,6 +206,9 @@ a.btn {
     }
 }
 
+.container{
+    max-width: 1080px;
+}
 .container.large {
     max-width: 1400px;
 }
@@ -275,6 +281,9 @@ textarea.form-control{
     background: url("images/dropdown.png") no-repeat right #fff;
     border: 2px solid #000;
   }
+
+
+  /*******************************the adding/editing/deleting phone number******************************/
 .contactNo{
     span{  
         display: inline-block;
@@ -292,6 +301,133 @@ textarea.form-control{
         }
     }
 }
+/*****************************the main search design that is embeded everywhere***************************/
+.mainSearch {
+   
+    .form-group {
+        .form-control {
+            height: 80px;
+            border-radius: 0px;
+            border: 0px;
+            border-right: 2px solid #ccc;
+            font-size: 1.2rem;
+            padding: 0 .5rem 0 2rem;
+
+            @media screen and (max-width:575px) {
+                height: 60px;
+                font-size: 1rem;
+            }
+        }
+
+        select.form-control {
+            color: #6c757e;
+        }
+
+        input[type=button].form-control {
+            background-color: $mainColor;
+            color: #fff;
+
+            &:hover {
+                background-color: $mainColorHover;
+            }
+        }
+
+        &:first-child {
+            .form-control {
+                border-left: 0;
+                border-radius: 40px 0 0 40px;
+            }
+        }
+
+        &:last-child {
+            .form-control {
+                border-radius: 0 40px 40px 0;
+            }
+        }
+        &.cityPicker{
+            position: relative;
+            input{
+                padding: 0 2.6rem 0;
+            }
+            i{
+                position: absolute;
+                top: 38%;
+                font-size: 1.4rem;
+                right: 15px;
+                color:#6c757e;
+            }
+        }
+    }
+
+    @media screen and (max-width:991px) {
+        padding-left:3rem;
+        padding-right:3rem;
+        .form-group {
+            .form-control {
+                border-radius: 40px !important;
+                border: 2px solid #ccc !important;
+            }
+        }
+    }
+    @media screen and (max-width:767px) {
+        padding-left:1rem;
+        padding-right:1rem;
+    }
+}
+
+
+/********************************breadcrumbs/ current page navigation********************************/
+.treeCont{
+    .breadcrumb{
+        background-color:transparent;
+        padding-left:0;
+        padding-right:0;
+        .breadcrumb-item{
+            padding:0 !important ;
+            font-size: 1rem;
+            font-weight: 600;
+            &:before{
+                font-weight: 900;
+                padding:0;
+                vertical-align: middle;
+                font-size: 1.6rem;
+                content:'';
+            }
+            
+            a{
+                color:#6c757e !important;
+                padding:0 .75rem 0;
+            }
+            &:first-child{
+                a{
+                  padding-right: 0;  
+                }
+            }
+            &+.breadcrumb-item{
+            
+                &::before{
+                    font-family: "Font Awesome 5 Free";
+                    content: "\f0d9";
+                    color:$mainColor;
+                }
+                &:last-child{
+                    &:before{
+                        padding-left:.75rem;
+                    }
+                }
+            }
+            &.active{
+                color:$mainColorDark;
+                // &:before{
+                //     padding-right:0;
+                // }
+            }
+        }
+    }
+}
+
+
+
 /*********************navbar modals**********************/
 #signIn,
 #signUp,
@@ -717,64 +853,15 @@ textarea.form-control{
         }
     }
 
-    .mainSearch {
+    .mainSearch{
+
         position: absolute;
         top: 68%;
         width: 68%;
         right: 16%;
-
-        .form-group {
-            .form-control {
-                height: 80px;
-                border-radius: 0px;
-                border: 0px;
-                border-right: 2px solid #ccc;
-                font-size: 1.2rem;
-                padding: 0 .5rem 0 2rem;
-
-                @media screen and (max-width:575px) {
-                    height: 60px;
-                    font-size: 1rem;
-                }
-            }
-
-            select.form-control {
-                color: #6c757e;
-            }
-
-            input[type=button].form-control {
-                background-color: $mainColor;
-                color: #fff;
-
-                &:hover {
-                    background-color: $mainColorHover;
-                }
-            }
-
-            &:first-child {
-                .form-control {
-                    border-left: 0;
-                    border-radius: 40px 0 0 40px;
-                }
-            }
-
-            &:last-child {
-                .form-control {
-                    border-radius: 0 40px 40px 0;
-                }
-            }
-        }
-
         @media screen and (max-width:991px) {
             position: relative;
             margin-top: 50px;
-
-            .form-group {
-                .form-control {
-                    border-radius: 40px !important;
-                    border: 2px solid #ccc !important;
-                }
-            }
         }
     }
 }
@@ -783,7 +870,7 @@ textarea.form-control{
 
 .recentlyCont {
     margin-top: 3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 5rem;
 
     h3 {
         color: $mainColor;
@@ -869,6 +956,27 @@ textarea.form-control{
     }
 }
 
+.tailCont{
+    .propertiesSale{
+        border-top:1px solid $mainColor;
+        font-size: 22px;
+        margin-bottom: 20px;
+        padding-top:30px;
+    }
+    li{
+        margin-bottom: 1px;
+        a{
+            color:#666;
+            transition: all .35s ease-in-out;
+            &:hover{
+                text-decoration: underline !important;
+            }
+            &.seeMore{
+                color:$mainColor
+            }
+        }
+    }
+}
 
 
 .footerCont {
@@ -1033,6 +1141,221 @@ body.offcanvas-active {
         }
     }
 }
+/**********************End offcanvas********************/
+
+/***********************property search results**********************/
+
+.resultSearch{
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    .mainSearch{
+        .form-group{
+            .form-control{
+                border-right:none;
+                border-left:0;
+                box-shadow: inset 0 0 0 1px #cacaca;
+                &:focus{
+                    box-shadow: inset 0 0 0 2px #aaa !important;
+                }
+            }
+ 
+            &:last-child{
+               .form-control{
+                   box-shadow: none;
+               }
+            }
+        }
+    }
+}
+
+
+.resultsCont{
+    .resultsFilter{
+        height:600px;
+        background: #fff;
+        border:1px solid #ddd;
+    }
+}
+/***********************End property search results**********************/
+
+
+
+
+/*********************************show/view property*****************************/
+
+.showPropertyDetails{
+    margin-top: 4rem;
+    .viewPropHeader{
+        box-shadow: 1px 0 1px 2px #d3d3d388;
+        padding:15px;
+        .adTitle{
+           h4{
+            color:#353535;
+            margin-bottom: .75rem;
+           }
+           p{
+               font-size: .9rem;
+               margin-bottom: 0;
+               span{
+                   display: inline-block;
+                   margin-left:.75rem;  
+               }
+           }
+        }
+        .price{
+            h3{
+              color:$mainColor
+            }
+         }
+    }
+    .viewPropertyBody{
+        margin-bottom: 10rem;
+        .video-items{
+            position: relative;
+            i{
+                position: absolute;
+                top:35%;
+                left:30%;
+                font-size: 10vw;
+                width:40%;
+                color:rgba(255,255,255,.8);
+                text-align: center;
+            }
+        }
+        .propertyBrief, .propertyDesc{
+            h4{
+                color:#454545;
+                margin-top: 2.5rem;
+                margin-bottom: 0;
+            }
+            li{
+                font-size: 1rem;
+                font-weight: 600;
+                margin-top: 1rem;
+                color:#858585;
+            }
+         }
+         .propertyBrief{
+            ul{
+                li{
+                    display: inline-block;
+                    &:nth-child(odd){
+                        width:35%;
+                    }
+                    &:nth-child(even){
+                        width:64%;
+                    }
+                }
+            }
+        }
+        .legalDesc {
+            background-color: #f1f1f1;
+            padding: 1rem 1rem 1rem 3rem;
+            position: relative;
+
+            &,
+            h6 {
+                font-size: 1.1rem;
+            }
+
+            h6 {
+                margin-bottom: 2px;
+            }
+           
+            ul {
+                margin-bottom: .5rem;
+                padding-right: 1rem .75rem !important;
+            }
+
+            .guaranteedImg {
+                position: absolute;
+                top: 10px;
+                left: 15px;
+
+                img {
+                    width: 40px;
+                }
+            }
+        }
+        .buttonsGroup{
+            text-align: left;
+            button{
+                display: block;
+                width:220px; 
+                margin-top: 1rem;
+                padding: 4px 5px 7px 5px !important;
+                i{
+                    background: $mainColor;
+                    color:#fff;
+                    padding:5px;
+                    border-radius: 50%;
+                    font-size: .8rem;
+                }
+            }
+        }
+     }
+     @media screen and (max-width:991px) {
+         .viewPropHeader{
+             .adTitle{
+                 h4{
+                    font-size: 1.25rem;
+                    line-height: 1.8rem;
+                 }
+                 span{
+                     font-size: .85rem;
+                 }
+             }
+             .price{
+                h3{
+                    font-size: 1.25rem;
+                }
+             }
+         }
+         .viewPropertyBody{
+
+            .propertyBrief, .propertyDesc{
+                li{
+                    font-size: .9rem;
+                }
+            }
+             .propertyBrief{
+                 h4{
+                     font-size: 1.2rem;
+                 }
+               ul{
+                   li:nth-child(odd),li:nth-child(even){
+                    display: block;
+                    width:100%;
+                   }
+               }
+             }
+         }
+     }
+     @media screen and (max-width:767px) {
+        .viewPropHeader{
+            .price{
+               h3{
+                   margin-top: 1rem;
+               }
+            }
+        }
+        .viewPropertyBody{
+            .buttonsGroup{
+                margin-top: 2rem;
+                &.sticky{
+                    position: unset;
+                    text-align: center;
+                    button{
+                        float: none !important;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*********************************End show/view property*****************************/
 
 
 

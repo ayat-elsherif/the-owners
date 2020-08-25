@@ -306,3 +306,16 @@ $(propertyCat).change(function(){
 });
 
 /*****************************End videos and document uploading*************************** */
+
+
+
+/******************************venobox / the lightbox****************************** */
+$('.venobox').venobox({
+
+	bgcolor    : '#5dff5e',                          // default: '#fff'
+	titleattr  : 'data-title',                       // default: 'title'
+	numeratio  : true,                               // default: false
+	infinigall : true,                               // default: false
+	// share      : ['facebook', 'twitter', 'download'] // default: []
+  });
+  /******************************END venobox / the lightbox****************************** */
