@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
       <title>The Owners</title>
       <link rel="shortcut icon" href="images/favicon.png">
-      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- <link rel="stylesheet" href="css/bootstrap.min.css"> -->
       <link rel="stylesheet" href="css/bootstrap-rtl.css">
       <link rel="stylesheet" href="css/line-awesome.min.css">
       <link rel="stylesheet" href="css/all.min.css">
@@ -21,6 +21,101 @@
       </div>
 
 
+
+      <!------------welcomeOwners modals---------->
+      <div class="thankUModalsGroup">
+        <div class="modal fade" id="vidsHelp" tabindex="-1" role="dialog" aria-labelledby="requiredDocs" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="clearfix">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="las la-times"></i>
+                  </button>
+                </div>
+              <div class="msgBody">
+                <p class="thanku-title">شكرا لك</p>
+                <p>سيتم التواصل معكم في أقرب وقت ممكن
+                  لمساعدتكم في كيفية التصوير</p>
+                <div class="text-center">
+                  <button class="btn btn-primary" data-dismiss='modal'>تأكيد</button>
+                  <button class="btn btn-outline-primary" data-dismiss='modal'>إلغاء</button>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="repHelp" tabindex="-1" role="dialog" aria-labelledby="requiredDocs" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="clearfix">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="las la-times"></i>
+                  </button>
+                </div>
+              <div class="msgBody">
+                <p class="thanku-title">شكرا لك</p>
+                <p>سيتم التواصل معكم في أقرب وقت ممكن
+                  لترتيب موعد زيارة مندوبنا اليكم
+                  </p>
+                <div class="text-center">
+                  <button class="btn btn-primary" data-dismiss='modal'>تأكيد</button>
+                  <button class="btn btn-outline-primary" data-dismiss='modal'>إلغاء</button>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="docsHelp" tabindex="-1" role="dialog" aria-labelledby="requiredDocs" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="clearfix">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="las la-times"></i>
+                  </button>
+                </div>
+              <div class="msgBody">
+                <p class="thanku-title">شكرا لك</p>
+                <p>سيتم التواصل معكم في أقرب وقت ممكن
+                  لمساعدتكم في الأوراق المطلوبة
+                  </p>
+                <div class="text-center">
+                  <button class="btn btn-primary" data-dismiss='modal'>تأكيد</button>
+                  <button class="btn btn-outline-primary" data-dismiss='modal'>إلغاء</button>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal fade" id="legalHelp" tabindex="-1" role="dialog" aria-labelledby="requiredDocs" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="clearfix">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i class="las la-times"></i>
+                  </button>
+                </div>
+              <div class="msgBody">
+                <p class="thanku-title">شكرا لك</p>
+                <p>سيتم التواصل معكم في أقرب وقت ممكن
+                  لترتيب موعد زيارة مندوبنا القانوني إليكم                  
+                  </p>
+                <div class="text-center">
+                  <button class="btn btn-primary" data-dismiss='modal'>تأكيد</button>
+                  <button class="btn btn-outline-primary" data-dismiss='modal'>إلغاء</button>
+                </div>
+              </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
         <!-----navbar---->
     <header class="container-fluid top_nav pAbs">
       <div class="container large">
@@ -142,11 +237,11 @@
             </ul>
             <div class="askHelp">
               <p>أريد المساعدة في كيفية التصوير</p>
-              <button  class="btn btn-primary">طلب المساعدة</button>
+              <button  class="btn btn-primary" data-toggle="modal" data-target="#vidsHelp">طلب المساعدة</button>
             </div>
             <div class="askRep">
                <p>أطلب مندوبنا لزيارة العقار وتصويره بدلا عنكم</p>
-               <button class="btn btn-primary">طلب مندوب تصوير</button>
+               <button class="btn btn-primary" data-toggle="modal" data-target="#repHelp">طلب مندوب تصوير</button>
             </div>
           </div>
           <div class="col-lg-4 col-md-5 offset-lg-1 offset-md-0">
@@ -171,11 +266,11 @@
             </ul>
             <div class="askHelp">
               <p>أريد المساعدة في الأوراق المطلوبة</p>
-              <button  class="btn btn-primary">طلب مساعدة</button>
+              <button  class="btn btn-primary" data-toggle="modal" data-target="#docsHelp">طلب مساعدة</button>
             </div>
             <div class="askRep">
                <p>أطلب مندوبنا القانوني لزيارتك وفحص أوراق الملكية</p>
-               <button class="btn btn-primary">طلب مندوب قانوني</button>
+               <button class="btn btn-primary" data-toggle="modal" data-target="#legalHelp" >طلب مندوب قانوني</button>
             </div>
   
             </div>
@@ -265,5 +360,18 @@
         <script src='js/venobox.min.js'></script>   
         <script src='js/WOW.js'></script>
         <script src="js/script.js"></script>
+        <script>
+          /******************************venobox / the lightbox****************************** */
+            $('.venobox').venobox({
+
+            bgcolor    : '#5dff5e',                          // default: '#fff'
+            titleattr  : 'data-title',                       // default: 'title'
+            numeratio  : true,                               // default: false
+            infinigall : true,                               // default: false
+            // share      : ['facebook', 'twitter', 'download'] // default: []
+            });
+            /******************************END venobox / the lightbox****************************** */
+
+        </script>
     </body>
 </html>

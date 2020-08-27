@@ -21,7 +21,7 @@
       </div>
 
       <!------------navbar modals---------->
-   
+    
       <!------------end navbar modals---------->
 
         <!-----navbar---->
@@ -112,67 +112,111 @@
       </ul>
     </div>
     <!----------End small screens block3 --------->
-<div class="thankUModalsGroup">
-  <div class="modal fade" id="revisingData" tabindex="-1" role="dialog" aria-labelledby="revisingData" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="clearfix">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <i class="las la-times"></i>
-            </button>
-          </div>
-         <div class="msgBody">
-          <p class="thanku-title">شكرا لك</p>
-          <p>سيتم مراجعة البيانات المرفقة والموافقة في أقرب وقت ممكن</p>
-          <div class="text-center">
-            <button class="btn btn-primary" data-dismiss='modal'>خروج</button>
-            <!-- <button class="btn btn-outline-primary" data-dismiss='modal'>إغلاق</button> -->
-          </div>
-         </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="modal fade" id="checkingNo" tabindex="-1" role="dialog" aria-labelledby="checkingNo" aria-hidden="true">
-    <div class="modal-dialog" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <div class="clearfix">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <i class="las la-times"></i>
-            </button>
-          </div>
-         <div class="numberList">
-          <p class="contactNo">
-            <span>
-                01004565673
-            </span>
-          </p>
-          <p class="contactNo">
-            <span>
-                12345678755
-            </span>
-          </p>
-          <p class="contactNo">
-            <span>
-                01112345678
-            </span>
-          </p>
-        
-         </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-    <div class='thankUCont text-center'>
-        <button class="btn btn-primary" data-toggle="modal" data-target="#revisingData">revising data</button>
+    <div class='editingAdCont' dir="rtl"> 
+      <div class='editAnnounce mb-2'>
+          <p class="main-title mb-2">تعديل إعلانك</p>
+          <p class="announcing mb-0">
+            يسمح لك فقط بتغيير القسم من بيع إلى ايجار أو العكس، نص العنوان أو المحتوى، تحميل فيديو
+            جديد، تغيير السعر، تغيير أرقام الإتصال.
+          </p>
+      </div>
+      <form class="form" id='editAdForm' dir='rtl' style='position: relative;' >
+        <fieldset class="editPropAd my-2"> 
+         <div class="form-step">
+          <div class="form-group">
+            <label>القسم</label>
+            <select class="form-control select-css" id='editPropertyCat'>
+              <option value="editSell" >بيع</option>
+              <option value="editRent" selected>إيجار</option>
+            </select>
+          </div>
+         </div>
+      </fieldset>
+        <fieldset class='multiForm editPropAd my-2'>
+          <h3 class="main-title">ضع عنوان ونص مناسب لإعلانك</h3>
+          <div class="addRent addSell">
+            
+              <div class="form-group">
+                <label>العنوان (باللغة العربية)</label>
+                <input type="text" class="form-control">
+              </div>
+              <div class="form-group">
+                <label>نص الإعلان (باللغة العربية )</label>
+                <textarea rows='15' class="form-control"></textarea>
+              </div>
+              <div id='sellEdit' class="animated fadeIn" >
+                <h6 class="main-title mt-4">سعر العقار</h6>
+                <div class="form-group">
+                  <label>طريقة الدفع</label>
+                  <select type="text" class="form-control">
+                    <option></option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label>السعر بالجنيه المصري ( غير قابل للتفاوض)</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+              <div id='rentEdit' class="animated fadeIn">
+                <h6 class="main-title mt-4">قيمة الإيجار</h6>
+                <div class="form-group">
+                  <label>قيمة الإيجار الشهري بالجنيه المصري ( غير قابل للتفاوض)</label>
+                  <input type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                  <label>قيمة التأمين</label>
+                  <input type="text" class="form-control">
+                </div>
+              </div>
+
+            <div class="addingContactNoCont">
+              <h6 class="main-title mt-5">رقم التواصل</h6>
+              <div class="form-group" id='contactNoList1'>
+              
+              </div>  
+              <label id='contactLabel1' class='contactLabelSell'><span>أضف رقم </span></label>
+              <div class="row align-items-center mb-5">
+                <div class="form-group col-md-6 col-12">
+                  <input type="tel" class="form-control enterContactNo enterContactNoSell" id="enterContactNo1">
+                </div>
+                <div class="form-group col-md-6 col-12">
+                  <a id='addContactNo1' class="btn addContactNoSell">إضافة</a>
+                </div>
+              </div>
+            </div>          
+          </div>
+        </fieldset> 
+        <fieldset class="editPropAd my-2">
+          <h3 class="main-title">ملفات الفيديو</h3>
+
+          <div class="form-group">
+            <label>تحميل ملف / ملفات فيديو جديدة</label>
+            <div class="row propVid">
+              <div class="col-md-6">
+                <a  class="btn btn-dark propVidBtn"> 
+                  <i class="las la-plus-circle"></i> تحميل</a>
+                <input type="file" class="propVidFile" id='propVideo' accept="video/*" hidden>
+                
+              </div>
+              <div class="col-md-6 mt-2 videosGroup" dir="ltr">
+                
+              </div>
+              
+            </div>
+          </div>
+          <div class="text-center mt-5 editConfirm">
+            <button class="btn btn-primary" data-dismiss='modal'>تعديل</button>
+                  <button class="btn btn-outline-primary" data-dismiss='modal'>إلغاء</button>
+          </div>
+        </fieldset>
+      </form>
     </div>
-    <div class='thankUCont text-center'>
-      <button class="btn btn-primary" data-toggle="modal" data-target="#checkingNo">cheking numbers</button>
-  </div>
+
+
+
+
 <!--------------footer----------------->
 <section class="container-fluid footerCont">
   <div class="container"> 
@@ -229,26 +273,47 @@
         <script src='js/jquery.easing.min.js'></script>       
         <script src="js/bootstrap.bundle.min.js"></script>    
         <script src='js/WOW.js'></script>
+        <script src='js/jquery.progressBarTimer.min.js'></script>
         <script src="js/script.js"></script>
         <script>
-          function editRow(rowNo) {
-            $('#enterContactNo').val( $('#phoneNo'+rowNo).text() );
+              function editRow(rowNo,cat) {
+            $('.enterContactNo'+cat).val($('#phoneNo'+rowNo).text());
             currentNo = rowNo;
-            $('#contactLabel').html('<strong class="animated fadeInUp">تعديل الرقم</strong>');
-            $('#addContactNo').html('<span class="animated fadeInUp">تعديل </span>')
+            $('.contactLabel'+cat).html('<strong class="animated fadeInUp">تعديل الرقم</strong>');
+            $('.addContactNo'+cat).html('<span class="animated fadeInUp">تعديل </span>')
           }
-          function saveEdits()
+          function saveEdits(cat)
           {
-            $('#contactLabel').html('<strong class="animated fadeInUp">أضف رقم آخر</strong>');
-            $('#addContactNo').html('إضافة');
-              $('#phoneNo'+currentNo).html('<span class="animated fadeIn">' + $('#enterContactNo').val() + '</span>' );
-              $("#enterContactNo").val("");
+            $('.contactLabel'+cat).html('<strong class="animated fadeInUp">أضف رقم آخر</strong>');
+            $('.addContactNo'+cat).html('إضافة');
+              $('#phoneNo'+currentNo).html('<span class="animated fadeIn">' + $('.enterContactNo'+cat).val() + '</span>' );
+              $(".enterContactNo"+cat).val("");
               currentNo = -1;
           }
           function deleteRow(rowNo)
           {
               $('#row'+rowNo).remove();
           }
+        
+
+
+
+          function editPRopertyType(){
+	let editPropertyCat =document.getElementById('editPropertyCat');
+	$("#sellEdit , #rentEdit").addClass('hidden');
+	if((editPropertyCat.value)=="editRent"){
+		$("#rentEdit").removeClass('hidden');
+	}
+	else if((editPropertyCat.value)=='editSell'){
+		$("#sellEdit").removeClass('hidden');
+	}
+}
+
+          editPRopertyType();
+
+          $('#editPropertyCat').change(editPRopertyType);
+
+
         </script>
     </body>
 </html>

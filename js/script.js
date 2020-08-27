@@ -71,6 +71,9 @@ $('.addContactNoRent').click(function(){
 	toAddNo('.enterContactNoRent','#contactNoList2','Rent');
 });
 
+// $('.addContactNo').click(function(){
+// 	toAddNo('.enterContactNo','#contactNoList','edit');
+// });
 
 newNo = 1;
 currentNo = -1;
@@ -226,7 +229,6 @@ $(propertyCat).change(function(){
 /***************************End Add a property MultiForm************************** */
 
 
-
 /*****************************videos and document uploading*************************** */
 
 	let propVidbtns=document.querySelectorAll('.propVidBtn');
@@ -236,6 +238,7 @@ $(propertyCat).change(function(){
 	let documentList=[];
 	let text='';
 	let documentNo=1;
+	
 	$(propVidFiles, propDocument).hide();
 	for (let btn of propVidbtns){
 		$(btn).click(function(){
@@ -303,19 +306,57 @@ $(propertyCat).change(function(){
 		
 	});
 
+	/*****************************End videos and document uploading*************************** */
+
+/************************************edit property*********************************** */
+
+
+
+
+
+let propVideo=document.getElementById('propVideo');
+
+$(propVideo).hide();
+$(propVideo).change(function(){
+	for(let i=0;i<propVideo.files.length;i++){
+		let fileVal = $(this).val();
+		fileVal = fileVal.match(/[\/\\]([\w\d\s\.\-\(\)]+)$/)[1];
+		if(fileVal.length > 10){
+		fileVal=fileVal.slice(0,10) +'..';
+		}
+		//making ids for the elements down in text
+	text+=`<div id="documentNo${documentNo}"><div class="propProgress" id='progress${documentNo}'></div>
+		<p id="document${documentNo}"> ${fileVal} </p>
+	</div>`;
+	documentList.push(propVideo.files[i]);
+	$('.videosGroup').append(text);
+	documentNo++;
+	text='';
+}
+$(this).parents('.propVid').find('.progressClose').show();
+let myPRogress=$(this).parents('.propVid').find('.propProgress');
+myPRogress.progressBarTimer({
+	autostart:true,
+	timeLimit: 15,
+	label : {
+		show: true, //show label inside progress bar
+		type: 'percent' //type of label. Allowable types: 'percent' => 30% , 'seconds' => 23/60
+	},
+	onFinish:function() {
+			$(myPRogress).hide();
+			$(myPRogress).next('.propVidName').addClass('animated bounce');
+	}
 });
 
-/*****************************End videos and document uploading*************************** */
+});
 
 
 
-/******************************venobox / the lightbox****************************** */
-$('.venobox').venobox({
 
-	bgcolor    : '#5dff5e',                          // default: '#fff'
-	titleattr  : 'data-title',                       // default: 'title'
-	numeratio  : true,                               // default: false
-	infinigall : true,                               // default: false
-	// share      : ['facebook', 'twitter', 'download'] // default: []
-  });
-  /******************************END venobox / the lightbox****************************** */
+
+
+});
+
+
+
+
