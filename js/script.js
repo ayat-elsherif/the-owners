@@ -42,21 +42,29 @@ $(function(){
     });
 	new WOW().init();
 	
-
-
 /********************************************** */
-	$('.form-control:first-child').focus(function(){
-		$(this).addClass('round-right');	
-	});
-	$('.form-control:first-child').on('blur',function(){
-		$(this).removeClass('round-right');	
-	});
-	$('.form-control:first-child').on('change',function(){
+	let	mainSearchRound='.mainSearch .form-control:first-child';
+	// $(mainSearchRound).focus(function(e){
+	// 	e.stopPropagation();
+	// 	$(this).toggleClass('round-right');	
+	// });
+	
+	$(mainSearchRound).on('change',function(e){
+		
 		$(this).removeClass('round-right');	
 		$(this).blur();
 	});
 	
-	
+	$(mainSearchRound).off().on('click',function(e) {
+		// e.stopPropagation();
+		$(this).toggleClass('round-right');
+		
+	  });
+	  
+	  $(mainSearchRound).on('blur',function(e){
+		e.stopPropagation();
+		$(this).removeClass('round-right');	
+	});
 
 	/*****************switching between advertise ur property/ signUp/ signIn************ */
 
