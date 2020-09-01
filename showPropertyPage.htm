@@ -495,8 +495,25 @@
             <div class="col-md-4">
               <div class="buttonsGroup text-center sticky">
                 <button class="btn btn-primary float-left">اتصال</button>
-                <button class="btn btn-outline-primary float-left"><i class="fas fa-share-alt"></i> أنشر هذا العقار</button>
+                <button class="btn btn-outline-primary float-left collapsed" data-toggle="collapse" data-target="#collapseShare" aria-expanded="false" aria-controls="collapseIHShare">
+                  <i class="fas fa-share-alt"></i> أنشر هذا العقار
+                  <div class="ShareGroup">
+                    <div id="collapseShare" class="collapse" aria-labelledby="IHShare">
+                      <div class="card-body bg-light">
+                         <ul class="socialIcons">
+                           <li><a href="" class="animated"><i class="fab fa-facebook-f"></i></a></li>
+                           <li><a href="" class="animated"><i class="fab fa-google"></i></a></li>
+                           <li><a href="" class="animated"><i class="fab fa-twitter"></i></a></li>
+                         </ul>
+                      </div>
+                    </div>
+                  </div>
+                </button>
+                  
               </div>
+              
+             
+
             </div>
           </div>
         </div>

@@ -173,12 +173,17 @@
             </ul> 
           <!----------large screens--------->
             <ul class="navbar-nav ml-lg-auto align-items-center">
-              <li class="nav-item d-none d-lg-block">
-                <a class="nav-link" data-toggle="modal" data-target="#signIn">دخول</a>
+              <li class="nav-item list-inline-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id='userProfileLG' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fa fa-user"></i> أحمد ممدوح </a>
+                <div class="dropdown-menu userProfileLG" aria-labelledby="userProfileLG">
+                  <a class="dropdown-item" href="#">حسابي</a>
+                  <a class="dropdown-item" href="#">إعلاناتي</a>
+                  <a class="dropdown-item" href="#">خروج</a>
+                </div>
+                
               </li>
-              <li class="nav-item d-none d-lg-block">
-                <a class="nav-link" data-toggle="modal" data-target="#signUp">انشاء حساب</a>
-              </li>
+              
               <li class="nav-item d-none d-lg-block">
                 <a class="nav-link" href="#">English</a>
               </li>
@@ -192,11 +197,16 @@
     <!----------small screens block3 --------->
     <div class="sec_nav d-lg-none d-md-block">
       <ul class="list-inline text-right px-2">
-        <li class="nav-item list-inline-item">
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#signIn">دخول</a>
-        </li>
-        <li class="nav-item list-inline-item">
-          <a class="nav-link" href="#" data-toggle="modal" data-target="#signUp">انشاء حساب</a>
+
+        <li class="nav-item list-inline-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id='userProfileSM' data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fa fa-user"></i> أحمد ممدوح </a>
+          <div class="dropdown-menu userProfileSM" aria-labelledby="userProfileSM">
+            <a class="dropdown-item" href="#">حسابي</a>
+            <a class="dropdown-item" href="#">إعلاناتي</a>
+            <a class="dropdown-item" href="#">خروج</a>
+          </div>
+          
         </li>
         <li class="nav-item list-inline-item">
           <a class="nav-link" href="#">English</a>
@@ -298,11 +308,7 @@
        </div>
        <div class="text-center next"><a href="addAds.htm" class="btn btn-primary">التالي</a></div>
     </div>  
-   
-
-
-    
-
+  
 <!--------------footer----------------->
 <section class="container-fluid footerCont">
   <div class="container"> 

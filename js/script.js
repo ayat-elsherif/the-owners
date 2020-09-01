@@ -48,9 +48,14 @@ $(function(){
 	$('.form-control:first-child').focus(function(){
 		$(this).addClass('round-right');	
 	});
-	$('.form-control:first-child').on(' blur',function(){
+	$('.form-control:first-child').on('blur',function(){
 		$(this).removeClass('round-right');	
 	});
+	$('.form-control:first-child').on('change',function(){
+		$(this).removeClass('round-right');	
+		$(this).blur();
+	});
+	
 	
 
 	/*****************switching between advertise ur property/ signUp/ signIn************ */
