@@ -404,6 +404,20 @@ textarea.form-control{
     }
   }
 
+
+  .ui-state-highlight a {
+    font-weight: bold;
+    color:#002e5b !important;
+}
+  
+ 
+    .ui-widget-content {
+        .ui-state-active{
+            background: $mainColor !important;
+            color:#fff;
+        }
+    }   
+
   /*******************************the adding/editing/deleting phone number******************************/
 .contactNo{
     span{  
@@ -473,7 +487,7 @@ textarea.form-control{
             }
             i{
                 position: absolute;
-                top: 38%;
+                top: 30px;
                 font-size: 1.4rem;
                 right: 15px;
                 color:#6c757e;

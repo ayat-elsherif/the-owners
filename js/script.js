@@ -34,6 +34,13 @@ $(function(){
         }
     }
   });
+
+
+
+
+
+/***************************Search cities************************ */
+
 /**************end offcanvas *************/
     $('[data-toggle="tooltip"]').tooltip({
         
