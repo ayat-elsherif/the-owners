@@ -390,10 +390,11 @@ if($(window).width()<767){
 		  alert('Thanks for sharing!');
 		})
 		.catch(console.error);
+		shareButton.classList.add('collapsed');
 		}
-		//  else {
-		//     shareDialog.classList.add('show');
-		// }
+		 else {
+		    shareDialog.classList.remove('collapsed');
+		}
 	});
 	
 	// closeButton.addEventListener('click', event => {
