@@ -388,9 +388,10 @@ if($(window).width()<767){
 		  text:'property details'
 		}).then(() => {
 		  alert('Thanks for sharing!');
+		  shareButton.classList.add('collapsed');
 		})
 		.catch(console.error);
-		shareButton.classList.add('collapsed');
+		
 		}
 		 else {
 		    shareDialog.classList.remove('collapsed');
