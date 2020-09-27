@@ -372,8 +372,34 @@ myPRogress.progressBarTimer({
 
 
 
+/**************************************open social media from android in mobile view**************************************** */
+if($(window).width()<767){
 
-
+  
+	const shareButton = document.querySelector('.propertyShare');
+	// const shareDialog = document.querySelector('.collapseIHShare');
+	// const closeButton = document.querySelector('.close-button');
+	
+	shareButton.addEventListener('click', event => {
+	  if (navigator.share) { 
+	   navigator.share({
+		  title: 'property title',
+		  url: 'https://the-owners.com/url',
+		  text:'property details'
+		}).then(() => {
+		  alert('Thanks for sharing!');
+		})
+		.catch(console.error);
+		}
+		//  else {
+		//     shareDialog.classList.add('show');
+		// }
+	});
+	
+	// closeButton.addEventListener('click', event => {
+	//   shareDialog.classList.remove('show');
+	// });
+	}
 
 });
 
