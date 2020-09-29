@@ -3,6 +3,12 @@
     <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <meta name="description" content="">
+      <meta property="og:title" content="owners - appartment" />
+      <meta property="og:description" content="This is owners!" />
+      <meta property="og:url" content="http://the-owners.come" />
+      <meta property="og:image" content="https://ayat-elsherif.github.io/the-owners/showPropertyPage.htm" />
+  
       <title>The Owners</title>
       <link rel="shortcut icon" href="images/favicon.png">
       <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -10,12 +16,13 @@
       <link rel="stylesheet" href="css/line-awesome.min.css">
       <link rel="stylesheet" href="css/all.min.css">
       <link rel="stylesheet" href="css/animate.css">
-      <link rel="stylesheet" href="css/venobox.min.css"/>
+      <link rel="stylesheet" href="css/sharetastic.css">
+      <link rel="stylesheet" href="css/venobox.min.css">
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/style-rtl.css">
     </head>
     <body dir='rtl' >
-
+    
       <div class="scroll-up">
         <i class="fa fa-chevron-up fa-2x"></i>  
       </div>
@@ -387,6 +394,8 @@
 
     <!--------------- the search------------>
     <div class=" container resultSearch">
+      
+
       <section class='mainSearch'>
         <form class="form">
             <div class="row mx-0">    
@@ -512,6 +521,7 @@
                 </div>
             </div>
             </div>
+
             <div class="col-md-4">
               <div class="buttonsGroup text-center sticky">
                 <button class="btn btn-primary float-left" data-toggle="modal" data-target="#callOwner">اتصال</button>
@@ -520,10 +530,10 @@
                   <div class="ShareGroup">
                     <div id="collapseShare" class="collapse" aria-labelledby="propShare">
                       <div class="card-body bg-light">
-                         <ul class="socialIcons">
-                           <li><a href="" class="animated"><i class="fab fa-facebook-f"></i></a></li>
+                         <ul class="socialIcons sharetastic">
+                           <!-- <li><a href="" class="animated"><i class="fab fa-facebook-f"></i></a></li>
                            <li><a href="" class="animated"><i class="fab fa-google"></i></a></li>
-                           <li><a href="" class="animated"><i class="fab fa-twitter"></i></a></li>
+                           <li><a href="" class="animated"><i class="fab fa-twitter"></i></a></li> -->
                          </ul>
                       </div>
                     </div>
@@ -594,9 +604,20 @@
 
 
 </div>
-        <script src="js/jquery-3.4.1.min.js"></script>
+        <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+
         <script src="js/bootstrap.bundle.min.js"></script>    
         <script src='js/WOW.js'></script>
+        <script src="js/sharetastic.js"></script>
+          <script>
+                      $('.sharetastic').sharetastic({
+                        
+                      });
+
+
+
+        </script>
         <script src='js/venobox.min.js'></script>
         <script>
             /******************************venobox / the lightbox****************************** */
