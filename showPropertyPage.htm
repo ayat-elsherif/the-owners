@@ -16,7 +16,7 @@
       <link rel="stylesheet" href="css/line-awesome.min.css">
       <link rel="stylesheet" href="css/all.min.css">
       <link rel="stylesheet" href="css/animate.css">
-      <link rel="stylesheet" href="css/sharetastic.css">
+      <link rel="stylesheet" href="css/sharetastic.css"> <!-----sharer plugin css----->
       <link rel="stylesheet" href="css/venobox.min.css">
       <link rel="stylesheet" href="css/style.css">
       <link rel="stylesheet" href="css/style-rtl.css">
@@ -463,8 +463,13 @@
             <div class="col-md-8">
 
               <div class="video-items">
-                <a class="venobox" data-vbtype="video"
+                <!-- <a class="venobox" data-vbtype="video"
                   data-href="https://www.youtube.com/watch?v=5M0_478hRMk" data-autoplay="true">
+                  <img src="images/flat.jpg" class="img-fluid">
+                  <i class="fab fa-youtube"></i>
+                </a> -->
+                <a class="venobox" data-vbtype="iframe"
+                  data-href="images/01.mp4" data-autoplay="true">
                   <img src="images/flat.jpg" class="img-fluid">
                   <i class="fab fa-youtube"></i>
                 </a>
@@ -530,11 +535,8 @@
                   <div class="ShareGroup">
                     <div id="collapseShare" class="collapse" aria-labelledby="propShare">
                       <div class="card-body bg-light">
-                         <ul class="socialIcons sharetastic">
-                           <!-- <li><a href="" class="animated"><i class="fab fa-facebook-f"></i></a></li>
-                           <li><a href="" class="animated"><i class="fab fa-google"></i></a></li>
-                           <li><a href="" class="animated"><i class="fab fa-twitter"></i></a></li> -->
-                         </ul>
+                         <div class="socialIcons sharetastic">
+                         </div>
                       </div>
                     </div>
                   </div>
@@ -604,19 +606,12 @@
 
 
 </div>
-        <!-- <script src="js/jquery-3.4.1.min.js"></script> -->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-
+        <script src="js/jquery-3.4.1.min.js"></script>
         <script src="js/bootstrap.bundle.min.js"></script>    
         <script src='js/WOW.js'></script>
-        <script src="js/sharetastic.js"></script>
+        <script src="js/sharetastic.js"></script><!-----sharer plugin----->
           <script>
-                      $('.sharetastic').sharetastic({
-                        
-                      });
-
-
-
+                $('.sharetastic').sharetastic();
         </script>
         <script src='js/venobox.min.js'></script>
         <script>

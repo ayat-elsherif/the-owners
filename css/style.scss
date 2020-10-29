@@ -491,7 +491,20 @@ textarea.form-control{
                 font-size: 1.4rem;
                 right: 15px;
                 color:#6c757e;
-                color:$mainColor
+                color:$mainColor;
+                @media screen and (max-width:575px){
+                    top: 20px;    
+                }
+                
+            }
+        }
+        &.searchCities{
+            flex-grow: 3;
+        }
+        &.searchAreas{
+            flex-grow: 5;
+            input{
+                border:none; 
             }
         }
     }
@@ -747,6 +760,7 @@ textarea.form-control{
 }
 
 /*********************end navbar modals**********************/
+
 
 .scroll-up {
     position: fixed;
@@ -2187,6 +2201,9 @@ body.offcanvas-active {
                 margin-bottom: 1rem;
                 .form-group{
                     margin-bottom: 1rem;
+                    output{
+                        display:block;
+                    }
                     .form-control{
                         padding: 0px 10px 5px;
                         height: 42px;
@@ -2367,3 +2384,22 @@ body.offcanvas-active {
 
 
 /***************************End Add a property MultiForm*************************/
+
+
+/*****************************Reset Password**************************/
+.resetPAssCont{
+    width: 540px;
+    margin: 100px auto 250px;
+    background-color: #fff;
+    padding:45px 50px;
+    border:1px solid #ddd;
+    h4{
+        margin-bottom: 20px;
+        color:$mainColor;
+    }
+    button{
+        font-size: 18px;
+    }
+}
+
+/*****************************End Reset Password***********************/

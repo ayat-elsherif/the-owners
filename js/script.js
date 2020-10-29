@@ -113,7 +113,8 @@ function toAddNo(enterContactNo,contactNoList,cat) {
         var contactNo = $(enterContactNo).val();
         var sHtml = `
         <div class='mb-3' id='row${rowNo}'>
-			<p class='contactNo mb-0 animated fadeIn' id='phoneNo${rowNo}'><span>${contactNo}</span></p>
+			<output class='contactNo mb-0 animated fadeIn' id='phoneNo${rowNo}'><span>${contactNo}</span></output>
+			<input id='phone${rowNo}' value='${contactNo}' hidden>
 			<div class='editingNo'>
 				<span class='editRow' onclick='editRow(${rowNo}, "${cat}")' > 
 					<i class="las la-pen"></i> تعديل </span>&nbsp;
@@ -147,7 +148,7 @@ $(".next").click(function(){
 
 		count++;
 		$(`#progressbar li:nth-child(${count})`).addClass("active");
-		console.log($(`#progressbar li:nth-child(${count})`));
+		// console.log($(`#progressbar li:nth-child(${count})`));
 		
 	if(next_fs.hasClass('hidden')){
 		next_fs=next_fs.next(); 
@@ -190,7 +191,7 @@ $(".previous").click(function(){
 	
 	//de-activate current step on progressbar
 	$(`#progressbar li:nth-child(${count})`).removeClass("active");
-	console.log($(`#progressbar li:nth-child(${count})`));
+	// console.log($(`#progressbar li:nth-child(${count})`));
 	count--;
 	//show the previous .multiForm
 	if(previous_fs.hasClass('hidden')){

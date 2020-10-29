@@ -51,7 +51,7 @@
                     <button class="btn btn-primary">دخول</button>
                   </div>
                 </form>
-              </div>
+              </div> 
             </div>
           </div>
         </div>
@@ -416,10 +416,16 @@
                 </select>
               </div>       
              
-              <div class="form-group px-0 col-lg-6 cityPicker ">
+              <div class="form-group px-0 col-md col-12 cityPicker searchCities ">
                 <input class="form-control" id="searchCities" name="searchCities" placeholder="المدينة أو الحي">
                 <i class="las la-map-marker-alt"></i>
               </div>
+            <!-- added in 2-10-2020 starts here -->  
+              <div class="form-group px-0 col-md col-12 cityPicker searchAreas">
+                <input class="form-control" id="searchAreas" name="searchAreas" placeholder="المنطقة" disabled>
+                <i class="las la-map-marker-alt"></i>
+              </div> 
+            <!-- added in 2-10-2020 ends here -->  
               <div class="form-group px-0 col-lg-2">
                 <input type="button" value="بحث" class="form-control btn btn-primary">
               </div>
@@ -443,7 +449,7 @@
                     <a href="#">شقة للبيع في الشيخ زايد واسعة تحفة..</a>
                   </h5>
                   <p>للبيع شقة مميزة بالتشطيب 350 متر في العقد اقل نسبة
-                    تحميل الصافي 300 متر دور ثامن المنطقة األولي ...</p>
+                    تحميل الصافي 300 متر دور ثامن المنطقة الأولي ...</p>
                 </figcaption>
               </figure>
               <div class="propBody">
@@ -481,7 +487,7 @@
                     <a href="#">شقة للبيع في الشيخ زايد واسعة تحفة..</a>
                   </h5>
                   <p>للبيع شقة مميزة بالتشطيب 350 متر في العقد اقل نسبة
-                    تحميل الصافي 300 متر دور ثامن المنطقة األولي ...</p>
+                    تحميل الصافي 300 متر دور ثامن المنطقة الأولي ...</p>
                 </figcaption>
               </figure>
               <div class="propBody">
@@ -519,7 +525,7 @@
                     <a href="#">شقة للبيع في الشيخ زايد واسعة تحفة..</a>
                   </h5>
                   <p>للبيع شقة مميزة بالتشطيب 350 متر في العقد اقل نسبة
-                    تحميل الصافي 300 متر دور ثامن المنطقة األولي ...</p>
+                    تحميل الصافي 300 متر دور ثامن المنطقة الأولي ...</p>
                 </figcaption>
               </figure>
               <div class="propBody">
@@ -662,7 +668,28 @@
         <!------ the autocomplete code------->
         <script>
           $( function() {
-            var availableTags = [
+            var availableCities = [
+              "القاهرة",
+              "الجيزة",
+              "الاسكندرية",
+              "السويس",
+              "جنوب سيناء",
+              "سوهاج",
+              "أسيوط"
+            ];
+
+            $("#searchCities").autocomplete({
+              source: availableCities,
+              autoFocus: true,
+              classes: {
+                "ui-autocomplete": "citiesResults"
+              },
+              minLength: 0 // to control the length of letters needed to be typed before begin the search     
+            });
+
+
+            //@@@@@@@@@ added in 2-10-2020 starts here
+            var availableAreas = [
               "القاهرة الجديدة",
               "الشيخ زايد",
               "مدينة نصر",
@@ -674,15 +701,30 @@
               "الدقي",
               "العبور"
             ];
-            $("#searchCities").autocomplete({
-              source: availableTags,
+         
+            $("#searchAreas").autocomplete({
+              source: availableAreas,
               autoFocus: true,
               classes: {
                 "ui-autocomplete": "citiesResults"
               },
               minLength: 0 // to control the length of letters needed to be typed before begin the search     
             });
-          } );
+            $('#searchCities').on('keyup',function(e){
+              toggleFocus(e);
+            });
+         
+            function toggleFocus(event){
+              if (event.keyCode === 13) {
+                $('#searchAreas').removeAttr('disabled').focus();
+              }
+              else{
+                $('#searchAreas').attr('disabled','disabled');
+              }
+            }
+            //@@@@@@@@@ added in 2-10-2020 ends here
+            
+          });
         </script>
     </body>
 </html>

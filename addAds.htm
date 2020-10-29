@@ -401,7 +401,7 @@
                 <div class="col-md-6">
                   <a class="btn btn-dark propVidBtn"> 
                     <i class="las la-plus-circle"></i> تحميل</a>
-                  <input type="file" class="propVidFile" id='propDocument' accept=".pdf,image/*" hidden>
+                  <input type="file" class="propVidFile" id='propDocument' accept=".pdf,image/*,.docx,.odt,.zip,.rar" hidden>
                 </div>
                 <div class="col-md-6 mt-2 doucmentsGroup" dir="ltr">
                   <!-- <div class="propProgress"></div>
@@ -486,6 +486,8 @@
         <script src='js/WOW.js'></script>
         <script src='js/jquery.progressBarTimer.min.js'></script>
         <script src="js/script.js"></script>
+
+        <!--------------adding number "remaining scripts" ----------->
         <script>
           function editRow(rowNo,cat) {
             $('.enterContactNo'+cat).val($('#phoneNo'+rowNo).text());
@@ -498,6 +500,7 @@
             $('.contactLabel'+cat).html('<strong class="animated fadeInUp">أضف رقم آخر</strong>');
             $('.addContactNo'+cat).html('إضافة');
               $('#phoneNo'+currentNo).html('<span class="animated fadeIn">' + $('.enterContactNo'+cat).val() + '</span>' );
+              $('#phone'+currentNo).val( $('.enterContactNo'+cat).val());
               $(".enterContactNo"+cat).val("");
               currentNo = -1;
           }
@@ -508,5 +511,7 @@
         
   
         </script>
+                <!--------------END adding number "remaining scripts" ----------->
+
     </body>
 </html>
